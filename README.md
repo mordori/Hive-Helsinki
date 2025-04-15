@@ -2,6 +2,6 @@
 
 <p align="middle">⚠ Work in progress ⚠</p>
 
-## libft
+## libft ⚠
 
 A library of commonly used standard functions recreated in C.
