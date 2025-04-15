@@ -1,6 +1,6 @@
-# 🌱 Collection of my projects at Hive Helsinki
+# <p align="middle">Collection of my projects at Hive Helsinki</p>
 
-⚠ Work in progress ⚠
+<p align="middle">⚠ Work in progress ⚠</p>
 
 ## libft
 
