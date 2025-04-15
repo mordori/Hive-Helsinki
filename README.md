@@ -1,6 +1,7 @@
-# Hive-Helsinki
+# 🌱 Collection of my projects at Hive Helsinki
 
-Collection of my project work at Hive Helsinki (Work in progress).
+⚠ Work in progress ⚠
 
--libft
-A library of replications of commonly used standard functions in C.
+## libft
+
+A library of commonly used standard functions recreated in C.
