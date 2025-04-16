@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:42:47 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/15 19:07:43 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:11:50 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,12 @@ int	main(void)
 	printf("c: %d\n", c);
 	printf("strchr: %s\n", strchr(str, c));
 	printf("ft_strchr: %s\n\n", ft_strchr(str, c));
+
+	c = 'l';
+	printf("str: %s\n", str);
+	printf("c: %d\n", c);
+	printf("strrchr: %s\n", strrchr(str, c));
+	printf("ft_strrchr: %s\n\n", ft_strrchr(str, c));
 
 	return (0);
 }
