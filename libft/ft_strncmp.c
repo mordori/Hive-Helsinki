@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:49:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/16 11:46:38 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/16 11:34:04 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/16 11:58:46 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	if (n == 0)
+		return (0);
+	while (*s1 == *s2 && *s1 && *s2 && i < n - 1)
 	{
-		if (s[i] == c)
-			return ((char *) &s[i]);
+		++s1;
+		++s2;
 		++i;
 	}
-	if (s[i] == c)
-		return ((char *) &s[i]);
-	return (NULL);
+	return (*s1 - *s2);
 }

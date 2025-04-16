@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:49:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/16 11:46:38 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/16 12:19:27 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/16 13:54:54 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size == 1)
 	{
-		if (s[i] == c)
-			return ((char *) &s[i]);
+		dst[0] = 0;
+		return (ft_strlen(src));
+	}
+	while (i < size - 1 && src[i])
+	{
+		dst[i] = src[i];
 		++i;
 	}
-	if (s[i] == c)
-		return ((char *) &s[i]);
-	return (NULL);
+	dst[i] = 0;
+	return (ft_strlen(src));
 }
