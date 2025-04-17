@@ -1,5 +1,3 @@
-CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	ft_isalpha.c \
@@ -25,7 +23,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	cc $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS)
@@ -37,8 +35,10 @@ fclean: clean
 
 re: fclean all
 
-test:
-	$(CC) -lbsd -g $(CFLAGS) main.c $(NAME)
+bonus:
+
+test: clean
+	cc -lbsd -g $(CFLAGS) main.c $(NAME)
 	valgrind --leak-check=full --track-origins=yes ./a.out
 
 .PHONY: all clean fclean re test

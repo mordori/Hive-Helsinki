@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 18:51:45 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/17 10:19:50 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/17 13:32:36 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/17 18:53:09 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memset(void *s, int c, size_t n)
+#include <stdio.h>
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*char_ptr;
+	char	str[50];
 
-	char_ptr = (unsigned char *) s;
+	ft_memcpy(str, src, 8);
+	printf("ASDSadASD      %s\n", str);
 	while (n-- > 0)
-		*char_ptr++ = (unsigned char) c;
-	return (s);
+	{
+
+	}
+	return (dest);
 }
