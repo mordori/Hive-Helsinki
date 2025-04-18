@@ -6,12 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:22:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/15 18:28:37 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/18 22:35:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
+	c = (unsigned char) c;
 	if (c >= ' ' && c <= '~')
 		return (16384);
 	return (0);

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   test_strncmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:16:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 22:35:22 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/18 21:54:11 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/18 21:55:54 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft_tests.h"
+
+void test_strncmp()
 {
-	c = (unsigned char) c;
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	size_t n = 4;
+	char str1[] = "abc";
+	char str2[] = "abcdef";
+	printf("str1: \t\t%s\n", str1);
+	printf("str2: \t\t%s\n", str2);
+	printf("n: \t\t%zu\n", n);
+	printf("strncmp: \t%d\n", strncmp(str1, str2, n));
+	printf("ft_strncmp: \t%d\n\n", ft_strncmp(str1, str2, n));
 }

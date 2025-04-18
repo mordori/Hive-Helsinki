@@ -15,30 +15,33 @@ SRCS =	ft_isalpha.c \
 
 OBJS = $(SRCS:.c=.o)
 
+TESTS = \
+
 NAME = libft.a
+
+.SECONDARY: $(OBJS)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "$(NAME) created"
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS)
-	@echo "removing objects"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "removing library"
+	@echo "removed $(NAME)"
 
 re: fclean all
 
 bonus:
 
-test: clean
+tests: clean
 	cc -lbsd -g $(CFLAGS) main.c $(NAME)
-	valgrind --leak-check=full --track-origins=yes ./a.out
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re tests

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   test_strrchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:16:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 22:35:22 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/18 21:53:41 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/18 21:55:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft_tests.h"
+
+void test_strrchr(int c)
 {
-	c = (unsigned char) c;
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	printf("----- strrchr -----\n");
+	char str[] = "Hello, World!";
+	printf("str: \t\t%s\n", str);
+	printf("c: \t\t%c\n", c);
+	printf("strrchr: \t%s\n", strrchr(str, c));
+	printf("ft_strrchr: \t%s\n", ft_strrchr(str, c));
+	test_mem_assert(strrchr(str, c), ft_strrchr(str, c));
 }

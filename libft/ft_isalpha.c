@@ -6,12 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:56:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/15 12:23:40 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/18 22:35:16 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
+	c = (unsigned char) c;
 	if ((c >= 'A' && c <= 'Z')
 		|| (c >= 'a' && c <= 'z'))
 		return (1024);

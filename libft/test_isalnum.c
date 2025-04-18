@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   test_isalnum.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:16:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 22:35:22 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/18 21:50:00 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/18 21:56:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft_tests.h"
+
+void test_isalnum(int c)
 {
-	c = (unsigned char) c;
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	printf("----- isalnum -----\n");
+	print_c(c);
+	printf("isalnum: \t%d\n", isalnum(c));
+	printf("ft_isalnum: \t%d\n", ft_isalnum(c));
+	test_assert(isalnum, ft_isalnum, c);
 }

@@ -6,12 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:40:50 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/15 18:41:26 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/18 22:35:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
+	c = (unsigned char) c;
 	if (c >= 'A' && c <= 'Z')
 		c += 'a' - 'A';
 	return (c);
