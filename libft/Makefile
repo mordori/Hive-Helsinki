@@ -1,12 +1,14 @@
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =	$(wildcard ft_*.c) \
+SRCS =	$(wildcard ft_*.c)
 
 OBJS = $(SRCS:.c=.o)
 
-TESTS = default
+TEST = default
 
 TEST_FILE = ./tests/test_$(TEST).c
+
+TEST_UTILS = ./tests/libft_tests.c
 
 NAME = libft.a
 
@@ -19,7 +21,8 @@ $(NAME): $(OBJS)
 	@echo "$(NAME) created"
 
 %.o: %.c
-	cc $(CFLAGS) -c $< -o $@
+	@cc $(CFLAGS) -c $< -o $@
+	@echo "compiling $@"
 
 clean:
 	@rm -rf $(OBJS)
@@ -30,15 +33,14 @@ fclean: clean
 
 re: fclean all
 
-test: clean
-	@cc -lbsd -g $(CFLAGS) $(TEST_FILE) $(NAME)
-	@cat $(TEST_FILE) | pygmentize -l c -O style=monokai | sed 's/\t/    /g'
+test: $(NAME) $(TEST_FILE)
+	@code ./ft_$(TEST).c
+	@cc -lbsd $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+	@echo ""
 	@./a.out
-	@.code ./ft_$(TEST).c
-	@rm a.out
 
 debug:
-
+	@rm a.out
 
 bonus:
 

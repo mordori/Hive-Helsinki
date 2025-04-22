@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:51:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 21:55:21 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:18:58 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,5 @@ void test_bzero()
 	print_str_chars(s4, sizeof(s4), "ft_bzero: \t");
 	printf("\n");
 }
+
+

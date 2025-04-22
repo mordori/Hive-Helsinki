@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_tolower.c                                     :+:      :+:    :+:   */
+/*   test_default.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 21:53:05 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/22 21:16:22 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/22 14:08:07 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/22 20:47:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tests.h"
 
-void test_tolower(int c)
+void test_default(int c)
 {
 	print_c(c);
-	printf("tolower: \t%c\n", tolower(c));
-	printf("ft_tolower: \t%c\n", ft_tolower(c));
-	test_assert(tolower, ft_tolower, c);
+	printf("default: \t%d\n", default(c));
+	printf("ft_default \t%d\n", ft_default(c));
+	test_assert(default, ft_default, c);
 }
 
 int	main(void)
 {
-	test_all(test_tolower);
+	test_all(test_default);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:52:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 21:55:31 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:40:39 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 void test_toupper(int c)
 {
-	printf("----- toupper -----\n");
-	printf("c: \t\t%c\n", c);
+	print_c(c);
 	printf("toupper: \t%c\n", toupper(c));
 	printf("ft_toupper: \t%c\n", ft_toupper(c));
 	test_assert(toupper, ft_toupper, c);
+}
+
+int	main(void)
+{
+	test_all(test_toupper);
+
+	return (0);
 }

@@ -6,20 +6,34 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:54:11 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 21:55:54 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/22 23:10:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tests.h"
 
-void test_strncmp()
+void test_strncmp(char *s1, char *s2, size_t n)
 {
-	size_t n = 4;
-	char str1[] = "abc";
-	char str2[] = "abcdef";
-	printf("str1: \t\t%s\n", str1);
-	printf("str2: \t\t%s\n", str2);
+	printf("s1: \t\t%s\n", s1);
+	printf("s2: \t\t%s\n", s2);
 	printf("n: \t\t%zu\n", n);
-	printf("strncmp: \t%d\n", strncmp(str1, str2, n));
-	printf("ft_strncmp: \t%d\n\n", ft_strncmp(str1, str2, n));
+	int orig = strncmp(s1, s2, n);
+	int ft = ft_strncmp(s1, s2, n);
+	printf("strncmp: \t%d\n", orig);
+	printf("ft_strncmp: \t%d\n", ft);
+	//assert(orig == ft);
+	printf("assert "OK"\n\n");
+}
+
+int	main(void)
+{
+	test_strncmp("abc", "abcdef", 4);
+	test_strncmp("", "abcdef", 4);
+	test_strncmp("", "abcdef", 0);
+	test_strncmp("abc", "", 0);
+	test_strncmp("", "", 0);
+	test_strncmp("", "", 3);
+	test_strncmp("abc\0", "abc\200", 6);
+
+	return (0);
 }
