@@ -1,21 +1,12 @@
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =	ft_isalpha.c \
-		ft_isdigit.c \
-		ft_isalnum.c \
-		ft_isascii.c \
-		ft_isprint.c \
-		ft_toupper.c \
-		ft_tolower.c \
-		ft_strlen.c \
-		ft_strchr.c \
-		ft_strrchr.c \
-		ft_strncmp.c \
-		ft_strlcpy.c \
+SRCS =	$(wildcard ft_*.c) \
 
 OBJS = $(SRCS:.c=.o)
 
-TESTS = \
+TESTS = default
+
+TEST_FILE = ./tests/test_$(TEST).c
 
 NAME = libft.a
 
@@ -39,9 +30,17 @@ fclean: clean
 
 re: fclean all
 
+test: clean
+	@cc -lbsd -g $(CFLAGS) $(TEST_FILE) $(NAME)
+	@cat $(TEST_FILE) | pygmentize -l c -O style=monokai | sed 's/\t/    /g'
+	@./a.out
+	@.code ./ft_$(TEST).c
+	@rm a.out
+
+debug:
+
+
 bonus:
 
-tests: clean
-	cc -lbsd -g $(CFLAGS) main.c $(NAME)
 
-.PHONY: all clean fclean re tests
+.PHONY: all clean fclean re test debug bonus
