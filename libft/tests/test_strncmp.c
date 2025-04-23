@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:54:11 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/22 23:10:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/23 15:30:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void test_strncmp(char *s1, char *s2, size_t n)
 	int ft = ft_strncmp(s1, s2, n);
 	printf("strncmp: \t%d\n", orig);
 	printf("ft_strncmp: \t%d\n", ft);
-	//assert(orig == ft);
+	assert(orig == ft);
 	printf("assert "OK"\n\n");
 }
 
@@ -34,6 +34,7 @@ int	main(void)
 	test_strncmp("", "", 0);
 	test_strncmp("", "", 3);
 	test_strncmp("abc\0", "abc\200", 6);
+	test_strncmp("abc\0", "abc\xFF", 6);
 
 	return (0);
 }

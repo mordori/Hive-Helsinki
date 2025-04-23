@@ -6,13 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:16:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/18 22:35:22 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/23 19:13:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	c = (unsigned char) c;
+	c = (unsigned char)c;
 	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);

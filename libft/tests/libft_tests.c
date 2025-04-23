@@ -6,22 +6,22 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:39:15 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/22 21:53:33 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/23 21:12:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tests.h"
 
-void print_str_chars(char *str, size_t i, char *msg)
+void print_str_chars(char *str, size_t n, char *msg)
 {
 	printf("%s", msg);
-	while (i-- > 0)
+	while (n-- > 0)
 	{
 		if (!*str)
-			printf("[NUL]");
+			printf("\\0");
 		else
 			printf("%c", *str);
-		++str;
+		str++;
 	}
 	printf("\n");
 }
@@ -32,42 +32,45 @@ void test_assert(int (*f1)(int c), int (*f2)(int c), int c)
 	printf("assert "OK"\n\n");
 }
 
-void test_assert_str(const char *s1, const char *s2, size_t size)
+void test_assert_str(const char *s1, const char *s2)
 {
-	while (size-- > 0)
+	if (!s1 && !s2)
+	{
+		printf("assert "OK"\n\n");
+		return ;
+	}
+	if (!s1 || !s2)
+	{
+		printf("assert "KO", (NULL)\n\n");
+		return ;
+	}
+	size_t n = sizeof(s1);
+	while (n-- > 0)
 		assert(*s1 == *s2);
 	printf("assert "OK"\n\n");
 }
-
-// void test_mem_assert(char *(*f1)(const char *s, int c), char *(*f2)(const char *s, int c),
-// 					char *s, int c)
-// {
-// 	if (memcmp(f1(s, c), f2(s, c), 1) == 0)
-// 		printf(OK " mem assertation passed!\n\n");
-// 	else
-// 		printf(KO " mem assertation failed!\n\n");
-// }
 
 void test_mem_assert(void *p1, void *p2)
 {
 	if (!p1 && !p2)
 	{
-		printf("memcmp "OK"\n\n");
+		printf("memcmp "OK", ");
 		return ;
 	}
 	if (!p1 || !p2)
 	{
-		printf("memcmp "KO" (NULL)\n\n");
+		printf("memcmp "KO" (NULL), ");
 		return ;
 	}
 	if (memcmp(p1, p2, 1) == 0)
-		printf("memcmp "OK"\n\n");
+		printf("memcmp "OK", ");
 	else
-		printf("memcmp "KO"\n\n");
+		printf("memcmp "KO", ");
 }
 
 void print_c(int c)
 {
+	c = (unsigned char) c;
 	if (isprint(c))
 		printf("c: \t\t%c\n", c);
 	else if (isascii(c))
@@ -81,7 +84,8 @@ void test_chrset(void (*f)())
 	printf("\033[35mCHARSET\033[0m\n");
 	char	chrset[] = CHARSET;
 	unsigned long i = 0;
-	while (i < strlen(chrset))
+	size_t n = sizeof(chrset);
+	while (i < n - 1)
 	{
 		f(chrset[i]);
 		i++;

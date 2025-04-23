@@ -6,13 +6,15 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:40:50 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/22 21:17:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:04:23 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
+	if (c == '\xFF')
+		return (c);
 	if (c >= 'A' && c <= 'Z')
 		c += 'a' - 'A';
-	return (c);
+	return ((unsigned char) c);
 }

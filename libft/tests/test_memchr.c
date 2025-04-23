@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memset.c                                      :+:      :+:    :+:   */
+/*   test_memchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:51:35 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 16:56:08 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/23 21:53:29 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tests.h"
 
-void test_memset(int c)
+void test_memchr(int c)
 {
-	char s[] = "123456789";
-	char s_ft[] = "123456789";
-	size_t n = 5;
+	char s[] = "Hello, world! abc 1990";
+	size_t n = 25;
 	printf("s: \t\t%s\n", s);
 	print_c(c);
 	printf("n: \t\t%zu\n", n);
-	memset(s, c, n);
-	ft_memset(s_ft, c, n);
-	printf("memset: \t%s\n", s);
-	printf("ft_memset: \t%s\n", s_ft);
-	test_assert_str(s, s_ft);
+	printf("memchr: \t%s\n", (char*)memchr(s, c, n));
+	printf("ft_memchr: \t%s\n", (char*)ft_memchr(s, c, n));
+	test_mem_assert(memchr(s, c, n), ft_memchr(s, c, n));
+	test_assert_str((char*)memchr(s, c, n), (char*)ft_memchr(s, c, n));
 }
 
 int	main(void)
 {
-	test_chrset(test_memset);
+	test_chrset(test_memchr);
 
 	return (0);
 }

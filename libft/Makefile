@@ -32,9 +32,10 @@ fclean: clean
 	@echo "removed $(NAME)"
 
 re: fclean all
+	@rm -rf ./a.out
 
 test: $(NAME) $(TEST_FILE)
-	@code ./ft_$(TEST).c
+#	@code ./ft_$(TEST).c
 	@cc -lbsd $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
 	@./a.out
