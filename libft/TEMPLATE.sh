@@ -1,6 +1,6 @@
 
 echo "#include \"libft.h\"\n" > ft_$2.c
-echo "$1\tft_$2($3)\n{\n}" >> ft_$2.c
+echo "$1\tft_$2($3)\n{\n\n}" >> ft_$2.c
 
 cp ./tests/test_$4.c ./tests/test_$2.c
 sed -i -e "s/$4/$2/g" ./tests/test_$2.c
