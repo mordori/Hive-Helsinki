@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 21:27:56 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:02:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/24 15:47:55 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/24 16:43:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char		*d;
+	const unsigned char	*str1;
+	const unsigned char *str2;
 
-	d = (const unsigned char *)s;
-	c = (unsigned char)c;
-	if (!s)
-		return (NULL);
-	while (n--)
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
+	if ((!s1 && !s2) || !n)
+		return (0);
+	while (*str1 == *str2 && n--)
 	{
-		if (*d == c)
-			return ((void *)d);
-		++d;
+		if (n)
+		{
+			++str1;
+			++str2;
+		}
 	}
-	return (NULL);
+	return (*str1 - *str2);
 }

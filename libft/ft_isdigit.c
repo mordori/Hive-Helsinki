@@ -6,9 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:43:29 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 19:13:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:25:34 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

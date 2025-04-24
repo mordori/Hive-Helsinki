@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:54:11 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 15:30:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 18:09:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void test_strncmp(char *s1, char *s2, size_t n)
 
 int	main(void)
 {
+	char s2[] = {-128, 0, 127, 0};
+	char sCpy2[] = {-128, 0, 127, 0};
+	test_strncmp(s2, sCpy2, 4);
+	test_strncmp("1234", "1235", 3);
 	test_strncmp("abc", "abcdef", 4);
 	test_strncmp("", "abcdef", 4);
 	test_strncmp("", "abcdef", 0);

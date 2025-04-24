@@ -29,12 +29,12 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf ./a.out
 	@echo "removed $(NAME)"
 
 re: fclean all
-	@rm -rf ./a.out
 
-test: $(NAME) $(TEST_FILE)
+test: $(NAME) $(TEST_FILE) clean
 #	@code ./ft_$(TEST).c
 	@cc -lbsd $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""

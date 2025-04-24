@@ -6,15 +6,18 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:36:03 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 16:04:20 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:24:43 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
 	if (c == '\xFF')
 		return (c);
+	c = (unsigned char)c;
 	if (c >= 'a' && c <= 'z')
 		c -= 'a' - 'A';
-	return ((unsigned char) c);
+	return (c);
 }

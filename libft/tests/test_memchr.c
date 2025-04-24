@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:51:35 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 21:53:29 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:57:36 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void test_memchr(int c)
 {
-	char s[] = "Hello, world! abc 1990";
+	char s[] = "Hello, t world! abc 1990";
 	size_t n = 25;
 	printf("s: \t\t%s\n", s);
 	print_c(c);
@@ -27,6 +27,7 @@ void test_memchr(int c)
 
 int	main(void)
 {
+	test_memchr('t' + 256);
 	test_chrset(test_memchr);
 
 	return (0);

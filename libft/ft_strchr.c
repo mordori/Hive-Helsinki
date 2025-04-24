@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:49:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 19:44:06 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:54:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	c = (unsigned char)c;
 	while (*s)
 	{
-		if (*s == c)
+		if ((const unsigned char)*s == c)
 			return ((char *)s);
 		++s;
 	}
-	if (*s == c)
+	if ((const unsigned char)*s == c)
 		return ((char *)s);
 	return (NULL);
 }

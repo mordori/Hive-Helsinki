@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:51:45 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 21:32:39 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:02:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	while (n-- > 0)
-		*(unsigned char *)s++ = (unsigned char)c;
+	unsigned char	*d;
+
+	d = (unsigned char *)s;
+	c = (unsigned char)c;
+	if (!s)
+		return (NULL);
+	while (n--)
+		*d++ = c;
 	return (s);
 }

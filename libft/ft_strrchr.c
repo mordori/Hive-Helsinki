@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:10:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 19:32:21 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:58:46 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = ft_strlen(s);
+	c = (unsigned char)c;
 	while (i > 0)
 	{
 		if (s[i] == c)

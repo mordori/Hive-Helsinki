@@ -6,9 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:22:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 19:13:18 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:25:30 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

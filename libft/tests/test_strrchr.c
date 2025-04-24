@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:53:41 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 21:14:13 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/24 18:07:22 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void test_strrchr(int c)
 {
-	char str[] = "Hello, World!";
+	char str[] = "Hello, t World!";
 	printf("str: \t\t%s\n", str);
 	print_c(c);
 	printf("strrchr: \t%s\n", strrchr(str, c));
@@ -25,6 +25,7 @@ void test_strrchr(int c)
 
 int	main(void)
 {
+	test_strrchr('t' + 256);
 	test_all(test_strrchr);
 
 	return (0);
