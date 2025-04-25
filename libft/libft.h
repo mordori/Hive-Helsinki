@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 19:11:57 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:50:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 
 int		ft_isalpha(int c);
+int		ft_atoi(const char *nptr);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

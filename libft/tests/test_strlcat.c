@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:54:28 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 22:39:03 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:45:22 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,18 @@ void test_strlcat(char *dst, char *dst_ft, char *src, size_t n)
 	(void)dst_ft;
 	size_t orig = strlcat(dst, src, n);
 	size_t ft = ft_strlcat(dst_ft, src, n);
-	print_str_chars(dst, orig, "TEST1\t\t");
-	print_str_chars(dst_ft, ft, "TEST2\t\t");
-	//printf("dst: \t\t%s\n", dst);
-	//printf("dst_ft: \t%s\n", dst_ft);
+	print_str_chars(dst, orig, "orig: \t\t");
+	print_str_chars(dst_ft, ft, "ft: \t\t");
 	printf("strlcat: \t%zu\n", orig);
 	printf("ft_strlcat: \t%zu\n", ft);
-	//assert(orig == ft);
-	printf("assert "OK"\n\n");
+	assert(orig == ft);
+	test_assert_str(dst, dst_ft);
 }
-
-#include <stdio.h>
-#include <string.h>
 
 int	main(void)
 {
-	char dst[] = "abcdefg";
-	char dst_ft[] = "abcdefg";
+	char dst[30] = "abcdefg";
+	char dst_ft[30] = "abcdefg";
 	test_strlcat(dst, dst_ft, "1234", 8);
 	test_strlcat(dst, dst_ft, "1234", 1);
 	test_strlcat(dst, dst_ft, "1234", 2);
