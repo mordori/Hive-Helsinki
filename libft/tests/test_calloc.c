@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:09:59 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 21:18:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 22:49:08 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,24 @@
 
 void test_calloc(size_t nmemb, size_t size)
 {
+	char *orig = (char *)calloc(nmemb, size);
+	char *ft = (char *)ft_calloc(nmemb, size);
 	printf("nmemb: \t\t%zu\n", nmemb);
 	printf("size: \t\t%zu\n", size);
-	printf("calloc: \t%s\n", (char *)calloc(nmemb, size));
-	printf("ft_calloc \t%s\n", (char *)ft_calloc(nmemb, size));
-	print_str_chars((char *)calloc(nmemb, size), nmemb, "calloc: \t");
-	//ft_calloc(nmemb, size);
-	print_str_chars((char *)ft_calloc(nmemb, size), nmemb, "ft_calloc: \t");
+	if (nmemb && size)
+	{
+		print_str_chars(orig, nmemb, "calloc: \t");
+		print_str_chars(ft, nmemb, "ft_calloc: \t");
+		if (orig && ft)
+		{
+			test_assert_str(orig, ft);
+		}
+	}
+	else
+		printf("Invalid read size (nmemb or size is 0)\n\n");
 	printf("\n");
+	free(orig);
+	free(ft);
 }
 
 int	main(void)

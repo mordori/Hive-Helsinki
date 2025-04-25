@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:01:53 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 21:16:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 22:21:46 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*arr;
+	void	*ptr;
 
 	if (size && nmemb > SIZE_MAX / size)
 		return (NULL);
-	arr = malloc(nmemb * size);
-	if (!arr)
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
-	ft_memset(arr, 0, nmemb * size);
-	return (arr);
+	ft_memset(ptr, 0, nmemb * size);
+	return (ptr);
 }

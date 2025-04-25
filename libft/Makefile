@@ -49,7 +49,6 @@ test: $(NAME) $(TEST_FILE) clean
 #	@code ./ft_$(TEST).c
 	@cc -lbsd $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
-	@./a.out
 
 debug:
 

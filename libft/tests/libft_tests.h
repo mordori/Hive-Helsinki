@@ -6,24 +6,22 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:35:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 20:57:28 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 21:34:45 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_TESTS_H
 # define LIBFT_TESTS_H
 
-#include <bsd/string.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <assert.h>
-#include <limits.h>
-#include <stdint.h>
+# include <bsd/string.h>
+# include <stdio.h>
+# include <ctype.h>
+# include <string.h>
+# include <assert.h>
 
-#include "../libft.h"
-#define OK "\033[32m[OK]\033[0m"
-#define KO "\033[31m[KO]\033[0m"
+# include "../libft.h"
+# define OK "\033[32m[OK]\033[0m"
+# define KO "\033[31m[KO]\033[0m"
 
 // Tests
 # define CHARSET "aAo9!\a\0\xFF\200"
