@@ -25,7 +25,8 @@ void test_atoi(char *nptr)
 
 int	main(int argc, char *argv[])
 {
-	test_atoi("123");
+	test_atoi("+123");
+	test_atoi("12+3");
 	test_atoi("12s3");
 	test_atoi("\67octal");
 	test_atoi("\x32hex");

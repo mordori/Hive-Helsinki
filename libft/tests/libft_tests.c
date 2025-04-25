@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:39:15 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:48:09 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 21:20:29 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 void print_str_chars(char *str, size_t n, char *msg)
 {
 	printf("%s", msg);
-	while (n-- > 0)
+	while (n > 0 && n < 100)
 	{
 		if (!*str)
 			printf("\\0");
 		else
 			printf("%c", *str);
-		str++;
+		++str;
+		--n;
 	}
+	if (n >= 100)
+		printf("String is too long! Possible segfault! Abort! Abort!");
 	printf("\n");
 }
 
@@ -45,8 +48,11 @@ void test_assert_str(const char *s1, const char *s2)
 		return ;
 	}
 	size_t n = sizeof(s1);
-	while (n-- > 0)
+	while (n > 0)
+	{
 		assert(*s1 == *s2);
+		--n;
+	}
 	printf("assert "OK"\n\n");
 }
 
@@ -70,7 +76,7 @@ void test_mem_assert(void *p1, void *p2)
 
 void print_c(int c)
 {
-	c = (unsigned char) c;
+	c = (unsigned char)c;
 	if (isprint(c))
 		printf("c: \t\t%c\n", c);
 	else if (isascii(c))

@@ -6,12 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 17:53:37 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:52:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_isspace(char c)
 {
@@ -27,12 +26,18 @@ int	ft_atoi(const char *nptr)
 	number = 0;
 	while (ft_isspace(*nptr))
 		++nptr;
-	if (*nptr == '-')
-	{
-		sign = -1;
-		++nptr;
-	}
+	if (*nptr == '-' || *nptr == '+')
+		if (*nptr++ == '-')
+			sign = -1;
 	while (ft_isdigit(*nptr))
-		number = number * 10 + *nptr++ - '0';
+	{
+		if (number > (INT_MAX - (*nptr - '0')) / 10)
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			return (INT_MIN);
+		}
+		number = number * 10 + (*nptr++ - '0');
+	}
 	return (sign * number);
 }

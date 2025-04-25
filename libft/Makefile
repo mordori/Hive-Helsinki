@@ -2,7 +2,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	$(wildcard ft_*.c)
 
+BONUS_SRCS = $(wildcard ft_*.c)
+
 OBJS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 TEST = default
 
@@ -30,9 +34,16 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf ./a.out
+	@rm -rf .bonus
 	@echo "removed $(NAME)"
 
 re: fclean all
+
+bonus : .bonus
+
+.bonus : $(OBJS) $(BONUS_OBJS)
+	@touch .bonus
+	@ar -rc $(NAME) $(BONUS_OBJS)
 
 test: $(NAME) $(TEST_FILE) clean
 #	@code ./ft_$(TEST).c
@@ -41,9 +52,5 @@ test: $(NAME) $(TEST_FILE) clean
 	@./a.out
 
 debug:
-	@rm a.out
-
-bonus:
-
 
 .PHONY: all clean fclean re test debug bonus

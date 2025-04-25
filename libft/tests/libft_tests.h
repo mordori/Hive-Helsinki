@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:35:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:31:33 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/25 20:57:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <string.h>
 #include <assert.h>
 #include <limits.h>
+#include <stdint.h>
 
 #include "../libft.h"
 #define OK "\033[32m[OK]\033[0m"
