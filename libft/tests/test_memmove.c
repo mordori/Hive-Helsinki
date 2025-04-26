@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:58:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 22:17:09 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 17:40:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void test_memmove(char *dest, char *src, char *dest_ft, char *src_ft, size_t n)
 {
+	if (!dest_ft)
+		printf("dsfsdf");
 	print_str_chars(dest, n, "dest: \t\t");
 	print_str_chars(src, n, "src: \t\t");
 	printf("n: \t\t%zu\n", n);
 	memmove(dest, src, n);
 	ft_memmove(dest_ft, src_ft, n);
+
 	print_str_chars(dest, n, "memmove: \t");
 	print_str_chars(dest_ft, n, "ft_memmove: \t");
 	test_mem_assert(dest, dest_ft);

@@ -6,12 +6,15 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 19:10:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 12:27:15 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 18:32:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Appends bytes from string [*src] to the end of string [*dst],
+// NUL-terminating the result which is at most [size] bytes long.
+// Returns the total length of the string attempted to create.
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;

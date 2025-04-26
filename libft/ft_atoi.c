@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 15:58:14 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 19:23:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static int	ft_isspace(char c)
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
-// Converts the initial portion of (string) [nptr] to (int).
-// Overflow is handled.
+// Converts the initial portion of the string [*nptr] to an (int) value.
+// Guards against overflow.
 int	ft_atoi(const char *nptr)
 {
 	int	sign;

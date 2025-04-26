@@ -6,13 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:58:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 15:42:53 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 18:56:13 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Locates string little in string big, where only len chars are searched.
+// Locates string [little] in string [big],
+// where up to [len] bytes are searched.
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	start;

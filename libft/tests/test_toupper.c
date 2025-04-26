@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:52:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:12:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 19:11:09 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void test_toupper(int c)
 
 int	main(void)
 {
+	printf("xFF test: \t%d\n", toupper('\xFF'));
+	printf("xFF test: \t%d\n\n", ft_toupper('\xFF'));
+	printf("xFF test: \t%d\n", toupper('\xFE'));
+	printf("xFF test: \t%d\n\n", ft_toupper('\xFE'));
 
 	test_all(test_toupper);
 
