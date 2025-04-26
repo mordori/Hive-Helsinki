@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:09:59 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 16:44:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 21:24:55 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void test_calloc(size_t nmemb, size_t size)
 			test_assert_str(orig, ft);
 		}
 	}
-	else if (!orig && !ft)
-		printf("NULL\n\n");
+	else if (!orig || !ft)
+		printf("Overflow, returned NULL\n\n");
 	else
-		printf("Invalid read size (nmemb/size is 0)\n\n");
+		printf("Memory succefully allocated with [nmemb] or [size] 0\n\n");
 	printf("\n");
 	free(orig);
 	free(ft);
@@ -38,9 +38,10 @@ void test_calloc(size_t nmemb, size_t size)
 
 int	main(void)
 {
+	// Prints only one element on success.
 	test_calloc(4, 1);
 	test_calloc(10, 5);
-	test_calloc(4, 0);
+	test_calloc(0, 4);
 	test_calloc(0, 0);
 	test_calloc(0, 5);
 	test_calloc(SIZE_MAX - 233553535353553, 1);

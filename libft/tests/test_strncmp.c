@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:54:11 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 18:09:53 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 19:40:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(void)
 	test_strncmp("abc", "", 0);
 	test_strncmp("", "", 0);
 	test_strncmp("", "", 3);
-	test_strncmp("abc\0", "abc\200", 6);
-	test_strncmp("abc\0", "abc\xFF", 6);
+	test_strncmp("abc\0", "abc\200", 4);
+	test_strncmp("abc\0", "abc\xFF", 4);
 
 	return (0);
 }

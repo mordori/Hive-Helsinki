@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   test_substr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 21:14:12 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/22 14:08:07 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/22 20:47:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_tests.h"
 
-// Allocates memory for [nmemb] elements of [size] bytes, initialized with \0.
-// Returns a pointer to the beginning of the allocated memory area.
-// Guards against overflow.
-void	*ft_calloc(size_t nmemb, size_t size)
+void test_substr(char *s, unsigned int start, size_t len)
 {
-	void	*ptr;
+	char *ft = ft_substr(s, start, len);
+	printf("s: \t\t%s\n", s);
+	//printf("ft_substr \t%s\n", ft);
+	print_str_chars(ft, ft_strlen(ft) + 1, "ft: \t\t");
+	free(ft);
+}
 
-	if (size && nmemb > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+int	main(void)
+{
+	test_substr("Test!", 1, 4);
+	test_substr("tripouille", 1, 1);
+	test_substr("tri", 4, 1);
+
+	//test_substr("");
+
+	return (0);
 }

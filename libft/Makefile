@@ -47,9 +47,11 @@ bonus : .bonus
 
 test: $(NAME) $(TEST_FILE) clean
 	@code ./ft_$(TEST).c
-	@cc -lbsd $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+	@cc -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
 
 debug:
+	@ cc -lbsd -g $(FLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+	@ gdb -tui ./a.out
 
-.PHONY: all clean fclean re test debug bonus
+.PHONY: all clean fclean re bonus test debug
