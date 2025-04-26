@@ -6,12 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 10:11:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:07:01 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 15:58:47 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Erases data in the [n] bytes of the memory from [*s] by writing /0.
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);

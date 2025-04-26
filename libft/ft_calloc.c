@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 20:01:53 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 22:21:46 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/26 16:00:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Allocates memory for [nmemb] elements of [size] bytes, writing \0.
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
@@ -21,6 +22,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	ft_memset(ptr, 0, nmemb * size);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

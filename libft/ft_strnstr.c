@@ -6,38 +6,30 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:58:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 14:43:40 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/26 15:42:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Locates string little in string big, where only len chars are searched.
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
+	size_t	start;
 	size_t	i;
-	size_t	j;
 
+	start = 0;
 	i = 0;
-	j = 0;
-	if (!*little)
+	if (!little[i])
 		return ((char *)big);
-	if (!len)
-		return (NULL);
-	while (big[i])
+	while (big[start])
 	{
-		j = 0;
-		if (little[j] == big[i])
-		{
-			while (little[j] && i + j < len && big[i + j])
-			{
-				if (little[j] != big[i + j])
-					break ;
-				++j;
-			}
-			if (!little[j])
-				return ((char *)big + i);
-		}
-		++i;
+		i = 0;
+		while (big[start + i] == little[i] && start + i < len)
+			++i;
+		if (!little[i])
+			return ((char *)&big[start]);
+		++start;
 	}
 	return (NULL);
 }
