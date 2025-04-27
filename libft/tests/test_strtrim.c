@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strjoin.c                                     :+:      :+:    :+:   */
+/*   test_strtrim.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:08:07 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 20:40:27 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 21:38:21 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tests.h"
 
-// void test_strjoin(int c)
-// {
-
-// }
-
 int	main(void)
 {
-	char *s = ft_strjoin("Test", "123");
-	printf("s: \t\t%s\n", s);
-	test_assert_str(s, "Test123");
-
-	char *s1 = ft_strjoin("Test", "");
-	printf("s: \t\t%s\n", s1);
-	test_assert_str(s1, "Test");
-
-	char *s2 = ft_strjoin("", "123");
-	printf("s: \t\t%s\n", s2);
-	test_assert_str(s2, "123");
-
-	char *s3 = ft_strjoin("", "");
-	printf("s: \t\t%s\n", s3);
-	test_assert_str(s3, "");
+	//char *s = ft_strtrim("   xxx   xxx", " x");
+	char *s = ft_strtrim("-----------", "-");
+	printf("asd: %s\n", s);
+	print_str_chars(s, strlen(s) + 1, "s: \t");
 
 	return (0);
 }

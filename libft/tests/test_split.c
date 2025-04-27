@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strjoin.c                                     :+:      :+:    :+:   */
+/*   test_split.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:08:07 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 20:40:27 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 21:38:21 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tests.h"
 
-// void test_strjoin(int c)
-// {
-
-// }
-
-int	main(void)
+void print_result(char **words)
 {
-	char *s = ft_strjoin("Test", "123");
-	printf("s: \t\t%s\n", s);
-	test_assert_str(s, "Test123");
+    int i = 0;
+    while (words[i])
+    {
+        printf("%s\n", words[i]);
+        free(words[i]);
+        i++;
+    }
+	printf("----------\n");
+    free(words);
+}
 
-	char *s1 = ft_strjoin("Test", "");
-	printf("s: \t\t%s\n", s1);
-	test_assert_str(s1, "Test");
-
-	char *s2 = ft_strjoin("", "123");
-	printf("s: \t\t%s\n", s2);
-	test_assert_str(s2, "123");
-
-	char *s3 = ft_strjoin("", "");
-	printf("s: \t\t%s\n", s3);
-	test_assert_str(s3, "");
-
-	return (0);
+int main(void)
+{
+	char	*str = "Hello,!42,Piscine!and,Goodbye";
+    print_result(ft_split(str, '!'));
+    //print_result(ft_split(" Apple Orange Banana", ' '));
+    //print_result(ft_split("   One  Two Three  ", ' '));
+    //print_result(ft_split("", ' '));
+	printf("%s\n", str);
+    return (0);
 }

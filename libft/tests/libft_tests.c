@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:39:15 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 15:53:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 20:38:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void print_str_chars(char *str, size_t n, char *msg)
 	printf("\n");
 }
 
-void test_assert(int (*f1)(int c), int (*f2)(int c), int c)
+void test_assert(int (*f1)(), int (*f2)(), int c)
 {
 	assert(f1(c) == f2(c));
 	printf("assert "OK"\n\n");
@@ -57,12 +57,17 @@ void test_assert_str(const char *s1, const char *s2)
 		return ;
 	}
 	size_t n = sizeof(s1);
+	size_t n2 = sizeof(s2);
+	if (n != n2)
+	{
+		printf("assert "KO);
+		return ;
+	}
 	while (n > 0)
 	{
 		assert(*s1 == *s2);
 		--n;
 	}
-	//assert(!strcmp(s1, s2));
 	printf("assert "OK"\n\n");
 }
 
