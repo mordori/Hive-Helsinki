@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 21:48:01 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 20:09:23 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdint.h>	// SIZE_MAX
 
 int		ft_isalpha(int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);

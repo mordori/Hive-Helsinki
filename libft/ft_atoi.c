@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 16:07:57 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:41:57 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ int	ft_atoi(const char *nptr)
 		return (0);
 	while (ft_isspace(*nptr))
 		++nptr;
-	if (*nptr == '-' || *nptr == '+')
-		if (*nptr++ == '-')
-			sign = -1;
+	if ((*nptr == '-' || *nptr == '+') && *nptr++ == '-')
+		sign = -1;
 	while (ft_isdigit(*nptr))
 	{
 		if (number > (INT_MAX - (*nptr - '0')) / 10)
