@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:58:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 17:40:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 15:58:48 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,21 @@ int	main(void)
 	test_memmove(dest, dest + 1, dest_ft, dest_ft + 1, 4);
 	test_memmove(dest + 1, dest, dest_ft + 1, dest_ft, 6);
 	test_memmove(s0, s, s0, s, 7);
+
+	char *s_ft = NULL;
+	char s_ft2[] = "abcdefg";
+	size_t n = 2;
+	size_t n2 = 0;
+	printf("s: \t\t%s\n", s_ft);
+	printf("n: \t\t%zu\n", n);
+	ft_memmove(s_ft, s, n);
+	print_str_chars(s_ft, sizeof (s_ft), "ft_memmove: \t");
+
+	printf("s: \t\t%s\n", s_ft2);
+	printf("n: \t\t%zu\n", n2);
+	ft_memmove(s_ft2, s, n2);
+	print_str_chars(s_ft2, sizeof (s_ft2), "ft_memmove: \t");
+	printf("\n");
 
 	return (0);
 }

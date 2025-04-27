@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:39:15 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/25 22:41:35 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 15:53:12 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void print_str_chars(char *str, size_t n, char *msg)
 	{
 		printf("String is too long! Possible segfault! Abort! Abort!");
 		printf("\n");
+		return ;
+	}
+	if (!str)
+	{
+		printf("(null)\n\n");
 		return ;
 	}
 	while (n > 0 && n < 100)
@@ -48,7 +53,7 @@ void test_assert_str(const char *s1, const char *s2)
 	}
 	if (!s1 || !s2)
 	{
-		printf("assert "KO", (NULL)\n\n");
+		printf("assert "KO", (null)\n\n");
 		return ;
 	}
 	size_t n = sizeof(s1);

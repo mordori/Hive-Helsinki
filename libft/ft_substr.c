@@ -6,12 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 21:26:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 22:55:53 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/27 16:04:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Allocates memory and returns a substring from the string [*s].
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;

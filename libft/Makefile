@@ -46,9 +46,10 @@ bonus : .bonus
 	@ar -rc $(NAME) $(BONUS_OBJS)
 
 test: $(NAME) $(TEST_FILE) clean
-	@code ./ft_$(TEST).c
+#	@code ./ft_$(TEST).c
 	@cc -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
+	@./a.out
 
 debug:
 	@ cc -lbsd -g $(FLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
