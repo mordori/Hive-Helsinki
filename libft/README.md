@@ -1,6 +1,6 @@
 # libft
 
-A library of commonly used standard and additional utility functions from libc recreated in C. Includes a full test suite.
+> A library of commonly used standard and additional utility functions from libc recreated in C.
 
 ##
 
