@@ -1,6 +1,6 @@
 # <p align="middle">Collection of my projects at Hive Helsinki</p>
 
-## **<p align="middle">[Wiki](https://github.com/mordori/Hive-Helsinki/wiki) ⚠**
+## <p align="middle">[Wiki](https://github.com/mordori/Hive-Helsinki/wiki) ⚠
 
 ## [get_next_line]() ⚠
 
@@ -10,4 +10,4 @@
 
 - A library of commonly used standard and additional utility functions from libc recreated in C. Tests are included.
 
-###### ⚠ Work in progress
+###### <p align="right">⚠ Work in progress
