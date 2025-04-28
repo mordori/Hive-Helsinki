@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 14:23:01 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:51:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /**
  * Allocates memory for `nmemb` elements of `size` bytes, initialized with \0.
+ *
  * Guards against overflow.
  *
  * @param nmemb Number of elements.

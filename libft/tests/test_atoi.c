@@ -73,6 +73,7 @@ int	main(int argc, char *argv[])
 //     printf("ft_atoi = %d\t", ft_atoi("9223372036854775818"));
 //     printf("atoi = %d\n\n", atoi("9223372036854775818"));
 // }
+
 //  int main(void)
 // {
 //     char s[] = "-21474836481111111111111111111111111111111111";
@@ -90,4 +91,11 @@ int	main(int argc, char *argv[])
 //         free(str);
 //         i++;
 //     }
+// }
+
+// if (number > (INT_MAX - (*nptr - '0')) / 10)
+// {
+//     if (sign == 1)
+//         return (INT_MAX);
+//     return (INT_MIN);
 // }

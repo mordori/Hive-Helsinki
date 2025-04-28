@@ -6,13 +6,19 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:25:47 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:44:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
+/**
+ * Counts the words inside string `s` delimited by the character `c`.
+ *
+ * @param s Source string.
+ * @param c Delimiter character.
+ * @return Number of words found.
+ */
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	count;
@@ -20,38 +26,66 @@ static size_t	ft_count_words(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		while (*s == c)
+		while (*s == c && *s)
 			++s;
-		if (*(s++ - 1) == c || !*s)
+		while (*s != c && *s)
+			++s;
+		if (!(!*s && *(s - 1) == c))
 			++count;
 	}
 	return (count);
 }
 
-static size_t	ft_word_len(char const *s, char c)
+/**
+ * Counts the length of a word in the source string pointed by `s` using
+ * the delimiter character `c`. Moves the pointer to the end of the word.
+ *
+ * @param s Pointer to a source string.
+ * @param c Delimiter character.
+ * @return Length of a word.
+ */
+static size_t	ft_word_len(char const **s, char c)
 {
 	size_t	len;
 
 	len = 0;
-	printf("%s\n", s);
-	while (!ft_strchr(&c, *s))
-		++s;
-	printf("%s\n", s);
-	while (!ft_strchr(&c, *s++))
+	while (**s == c)
+		++*s;
+	while (**s != c && **s)
+	{
 		++len;
+		++*s;
+	}
 	return (len);
 }
 
-static void	*ft_free_strs(char **strs)
+/**
+ * Frees the allocated array of strings `s` from memory and
+ * sets the pointers to NULL.
+ *
+ * @param s Array of strings.
+ * @return NULL.
+ */
+static char	**ft_free_strs(char **strs)
 {
-	while (!*strs)
-		free(*strs++);
+	while (*strs)
+	{
+		free(*strs);
+		*strs++ = NULL;
+	}
 	free(strs);
+	strs = NULL;
 	return (NULL);
 }
 
-// Allocates memory and returns an array of strings by splitting string [*s]
-// using the character [c] as a deliter. Last element is a NULL pointer.
+/**
+ * Allocates memory and returns an array of strings by splitting string `s`
+ * using the character `c` as a deliter. Last element is a NULL pointer.
+ *
+ * @param s Source string.
+ * @param c Delimiter character.
+ * @return New array of strings split from the string `s`.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
@@ -59,19 +93,20 @@ char	**ft_split(char const *s, char c)
 	size_t	word_len;
 	size_t	i;
 
-	i = 0;
+	if (!s)
+		return (NULL);
 	words = ft_count_words(s, c);
-	printf("words: %zu\n", words);
 	strs = malloc((words + 1) * sizeof (char *));
 	if (!strs)
 		return (NULL);
+	i = 0;
 	while (words--)
 	{
-		word_len = ft_word_len(s, c);
-		printf("wordlen: %zu\n", word_len);
-		strs[i++] = ft_substr(s, 0, word_len);
-		if (!*strs)
+		word_len = ft_word_len(&s, c);
+		strs[i] = ft_substr(s - word_len, 0, word_len);
+		if (!strs[i])
 			return (ft_free_strs(strs));
+		++i;
 	}
 	strs[i] = NULL;
 	return (strs);

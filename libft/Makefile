@@ -22,20 +22,21 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(NAME) created"
+	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 %.o: %.c
 	@cc $(CFLAGS) -c $< -o $@
-	@echo "compiling $@"
+	@echo "\033[1;32m [+] \033[0mcompiling $@"
 
 clean:
 	@rm -rf $(OBJS)
+	@echo "\033[1;31m [-] removed .o files \033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf ./a.out
 	@rm -rf .bonus
-	@echo "removed $(NAME)"
+	@echo "\033[1;31m [-] removed $(NAME) \033[0m"
 
 re: fclean all
 
