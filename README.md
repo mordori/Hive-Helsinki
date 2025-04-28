@@ -4,12 +4,14 @@
 
 ## [get_next_line]() ⚠
 
-Work in progress.
+- Work in progress.
 
 ##
 
-## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft) ✔
+## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft)
 
-A library of commonly used standard and additional utility functions from libc recreated in C. Tests are included.
+- A library of commonly used standard and additional utility functions from libc recreated in C. Tests are included.
 
 ##
+
+###### ⚠ Work in progress
