@@ -6,8 +6,10 @@
 
 - Work in progress.
 
-## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft)
+## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft) ✔
 
 - A library of commonly used standard and additional utility functions from libc recreated in C. Tests are included.
+
+###### <p align="right">✔ Completed
 
 ###### <p align="right">⚠ Work in progress
