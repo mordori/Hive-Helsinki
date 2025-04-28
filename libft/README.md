@@ -4,7 +4,7 @@
 
 ##
 
-### Usage
+### Usage 🚨
 
 - Create the `libft.a` library in your terminal with command:
 ``` Makefile
