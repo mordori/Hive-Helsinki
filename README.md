@@ -7,7 +7,7 @@
 
 ##
 
-## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft)
+## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft)
 
 A library of commonly used standard and additional utility functions from libc recreated in C. Includes a full test suite.
 
