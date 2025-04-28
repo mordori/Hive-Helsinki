@@ -6,12 +6,18 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:52:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/23 19:12:01 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:38:44 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Checks if `c` is an alphabetic or a numeric character.
+ *
+ * @param c Character to be checked for.
+ * @return `8` if the check is true, `0` if false.
+ */
 int	ft_isalnum(int c)
 {
 	c = (unsigned char)c;

@@ -27,14 +27,15 @@ void test_strnstr(char *big, char *little, size_t len)
 int	main(void)
 {
 	char big[] = "Hello, World!";
-	char big2[] = "He";
+	char big2[] = "e999";
+	test_strnstr(big, big2, 10);
 	test_strnstr(big, "ello", 10);
 	test_strnstr(big, "ello", 3);
 	test_strnstr(big, "ello", 0);
 	test_strnstr(big, "", 0);
 	test_strnstr(big, "asdasdasdasdasdasdasdsadd", 100);
 	test_strnstr(big2, "e", 2);
-	test_strnstr(big2, "e\0", 2);
+	test_strnstr(big2, "9\0", 2);
 
 	return (0);
 }

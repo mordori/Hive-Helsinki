@@ -6,14 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 22:34:23 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:41:58 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>	// Malloc(), NULL
+# include <stdlib.h>	// Malloc(), NULL, size_t
 # include <limits.h>	// INT_MAX, INT_MIN
 # include <stdint.h>	// SIZE_MAX
 

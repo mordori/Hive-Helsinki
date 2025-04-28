@@ -6,14 +6,19 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:36:03 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 16:04:54 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:56:00 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Converts lowercase alphabet char to uppercase.
-// \xFF hex value returns signed -1 in libc toupper.
+/**
+ * Converts lowercase alphabet character `a-z` to uppercase.
+ *
+ * `\xFF` hex value returns signed `-1` in libc toupper.
+ * @param c Character to be converted.
+ * @return `A-Z`, otherwise `c`. Exception for \xFF.
+ */
 int	ft_toupper(int c)
 {
 	if (c == '\xFF')

@@ -23,25 +23,25 @@ void test_atoi(char *nptr)
 	printf("assert "OK"\n\n");
 }
 
-// int	main(int argc, char *argv[])
-// {
-// 	test_atoi("+123");
-// 	test_atoi("12+3");
-// 	test_atoi("12s3");
-// 	test_atoi("\67octal");
-// 	test_atoi("\x32hex");
-// 	test_atoi("+ - -123    ");
-// 	test_atoi("+-123    ");
-// 	test_atoi("-123    ");
-// 	test_atoi("  -123    ");
-// 	test_atoi("  --123    ");
-// 	test_atoi("  \t  123");
-// 	test_atoi("2147483647");
-// 	test_atoi("-2147483648");
-// 	if(argc == 2)
-// 		test_atoi(argv[1]);
-// 	return (0);
-// }
+int	main(int argc, char *argv[])
+{
+	test_atoi("+123");
+	test_atoi("12+3");
+	test_atoi("12s3");
+	test_atoi("\67octal");
+	test_atoi("\x32hex");
+	test_atoi("+ - -123    ");
+	test_atoi("+-123    ");
+	test_atoi("-123    ");
+	test_atoi("  -123    ");
+	test_atoi("  --123    ");
+	test_atoi("  \t  123");
+	test_atoi("2147483647");
+	test_atoi("-2147483648");
+	if(argc == 2)
+		test_atoi(argv[1]);
+	return (0);
+}
 
 // int    main(void)
 // {
@@ -73,21 +73,21 @@ void test_atoi(char *nptr)
 //     printf("ft_atoi = %d\t", ft_atoi("9223372036854775818"));
 //     printf("atoi = %d\n\n", atoi("9223372036854775818"));
 // }
- int main(void)
-{
-    char s[] = "-21474836481111111111111111111111111111111111";
-    char *str;
+//  int main(void)
+// {
+//     char s[] = "-21474836481111111111111111111111111111111111";
+//     char *str;
 
-    int i = 2;
-    while (i < 40)
-    {
-        str = malloc(i + 1);
-        memcpy(str, s, i);
-        str[i] = 0;
-        printf("str: %s\n", str);
-        printf("atoi: %i\n", atoi(str));
-        printf("ft_atoi: %i\n\n", ft_atoi(str));
-        free(str);
-        i++;
-    }
-}
+//     int i = 2;
+//     while (i < 40)
+//     {
+//         str = malloc(i + 1);
+//         memcpy(str, s, i);
+//         str[i] = 0;
+//         printf("str: %s\n", str);
+//         printf("atoi: %i\n", atoi(str));
+//         printf("ft_atoi: %i\n\n", ft_atoi(str));
+//         free(str);
+//         i++;
+//     }
+// }

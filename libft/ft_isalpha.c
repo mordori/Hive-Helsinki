@@ -6,12 +6,18 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:56:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:25:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:39:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Checks if `c` is an alphabetic character.
+ *
+ * @param c Character to be checked for.
+ * @return `1024` if the check is true, `0` if false.
+ */
 int	ft_isalpha(int c)
 {
 	c = (unsigned char)c;

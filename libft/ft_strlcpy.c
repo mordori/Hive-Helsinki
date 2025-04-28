@@ -6,14 +6,21 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:19:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 16:28:39 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:05:07 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Copies up to [size] - 1 bytes from the string [*src] to the string [*dst].
-// Returns the total length of the string attempted to create.
+/**
+ * Copies up to `size - 1` characters from the string `src` to the string `dst`,
+ * NUL-terminating the result.
+ *
+ * @param dst Destination string.
+ * @param src Source string.
+ * @param size Amount of characters to be copied.
+ * @return Returns the length of the string `src` attempted to copy.
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	len;
@@ -21,13 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	len = ft_strlen(src);
 	if (!dst || !src || !size)
 		return (len);
-	if (size == 1)
-	{
-		*dst = 0;
-		return (len);
-	}
-	while (size-- > 1 && *src)
+	while (--size && *src)
 		*dst++ = *src++;
-	*dst = 0;
+	*dst = '\0';
 	return (len);
 }

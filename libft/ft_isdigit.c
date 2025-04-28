@@ -6,12 +6,18 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:43:29 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/24 17:25:34 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:40:32 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Checks if `c` is a numeric character.
+ *
+ * @param c Character to be checked for.
+ * @return `2048` if the check is true, `0` if false.
+ */
 int	ft_isdigit(int c)
 {
 	c = (unsigned char)c;

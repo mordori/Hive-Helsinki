@@ -6,22 +6,27 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:10:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 21:53:32 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:55:04 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Returns a pointer to the last occurrence of byte [c] in string [*s]
-// or NULL if not found.
+/**
+ *
+ * @param s Source string.
+ * @param c Character to be searched for.
+ * @return Pointer to the last occurrence of character `c` in `s`,
+ * or `NULL` if not found.
+ */
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
-	i = ft_strlen(s);
 	c = (unsigned char)c;
 	if (!s)
 		return (NULL);
+	i = ft_strlen(s);
 	while (i > 0)
 	{
 		if (s[i] == c)

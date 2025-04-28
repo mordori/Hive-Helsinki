@@ -6,34 +6,48 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 21:52:39 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:35:12 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Checks if `c` is a whitespace character.
+ *
+ * @param c Character to be checked for.
+ * @return `1` if the check is true, `0` if false.
+ */
 static int	ft_isspace(char c)
 {
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
-// Converts the initial portion of the string [*nptr] to an (int) value.
-// Guards against overflow.
-// In case of NULL [*nptr] returns arbitrary 0.
 // TODO: Print error for (null) when allowed.
+/**
+ * Converts the initial portion of the string `nptr` to an integer value.
+ *
+ * Guards against overflow.
+ *
+ * In case of `NULL nptr` returns arbitrary 0.
+ *
+ * @param nptr Source string.
+ * @return Integer value converted from the initial portion of the provided
+ * string `nptr`.
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	sign;
 	int	number;
 
-	sign = 1;
-	number = 0;
 	if (!nptr)
 		return (0);
 	while (ft_isspace(*nptr))
 		++nptr;
+	sign = 1;
 	if ((*nptr == '-' || *nptr == '+') && *nptr++ == '-')
 		sign = -1;
+	number = 0;
 	while (ft_isdigit(*nptr))
 	{
 		if (number > (INT_MAX - (*nptr - '0')) / 10)

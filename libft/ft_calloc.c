@@ -6,15 +6,21 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 16:09:59 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:23:01 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Allocates memory for [nmemb] elements of [size] bytes, initialized with \0.
-// Returns a pointer to the beginning of the allocated memory area.
-// Guards against overflow.
+/**
+ * Allocates memory for `nmemb` elements of `size` bytes, initialized with \0.
+ * Guards against overflow.
+ *
+ * @param nmemb Number of elements.
+ * @param size Size of an element in bytes.
+ * @return Pointer to the beginning of the allocated memory area, or `NULL`
+ * if allocation failed.
+ */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
