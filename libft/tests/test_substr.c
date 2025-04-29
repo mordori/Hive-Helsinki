@@ -15,8 +15,10 @@
 void test_substr(char *s, unsigned int start, size_t len)
 {
 	print_str_chars(s, ft_strlen(s) + 1, "s: \t\t");
+	printf("start: \t\t%d\n", start);
+	printf("len: \t\t%zu\n", len);
 	char *ft = ft_substr(s, start, len);
-	print_str_chars(ft, ft_strlen(ft) + 1, "ft: \t\t");
+	print_str_chars(ft, ft_strlen(ft) + 1, "substr: \t");
 	printf("\n");
 	free(ft);
 }
@@ -26,9 +28,10 @@ int	main(void)
 	test_substr("Test!", 2, 4);
 	test_substr("Good", 0, 1);
 	test_substr("Good", 0, 0);
-	test_substr("tri", 4, 1);
-	test_substr("tri", 5, 1);
-	test_substr("tri", 5, 7);
+	test_substr("Bad", 4, 1);
+	test_substr("Bad", 5, 1);
+	test_substr("Bad", 5, 7);
+	test_substr("Bad", 0, 7);
 	test_substr("", 5, 7);
 
 	//test_substr("");

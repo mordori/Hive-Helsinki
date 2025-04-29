@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:09:59 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/26 21:24:55 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:15:58 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void test_calloc(size_t nmemb, size_t size)
 		}
 	}
 	else if (!orig || !ft)
-		printf("Overflow, returned NULL\n\n");
+		printf("Overflow or malloc() fail, returned NULL\n\n");
 	else
 		printf("Memory succefully allocated with [nmemb] or [size] 0\n\n");
 	printf("\n");
@@ -44,8 +44,11 @@ int	main(void)
 	test_calloc(0, 4);
 	test_calloc(0, 0);
 	test_calloc(0, 5);
-	test_calloc(SIZE_MAX - 233553535353553, 1);
-	//test_calloc(SIZE_MAX + 2, SIZE_MAX);
+
+	// Doesnt overflow, but malloc() fails and returns NULL
+	test_calloc(2335535353535533, 1);
+
+	test_calloc(SIZE_MAX, SIZE_MAX);
 
 	return (0);
 }

@@ -6,12 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:00:43 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 20:51:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:58:20 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// TODO: Print error for overflow when allowed.
 /**
  * Allocates memory for `nmemb` elements of `size` bytes, initialized with \0.
  *

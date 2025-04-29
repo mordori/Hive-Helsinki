@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:51:18 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/22 21:59:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:08:15 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void test_strlen(char *str)
 int	main(void)
 {
 	test_strlen("Hello, world!");
+	test_strlen("");
 
 	return (0);
 }

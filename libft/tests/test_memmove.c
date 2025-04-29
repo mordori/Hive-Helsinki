@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:58:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/27 15:58:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:54:30 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ int	main(void)
 	test_memmove(dest + 1, dest, dest_ft + 1, dest_ft, 6);
 	test_memmove(s0, s, s0, s, 7);
 
+
+	printf("\n");
 	char *s_ft = NULL;
-	char s_ft2[] = "abcdefg";
 	size_t n = 2;
-	size_t n2 = 0;
-	printf("s: \t\t%s\n", s_ft);
+	print_str_chars(s_ft, sizeof (s_ft), "s: \t\t");
 	printf("n: \t\t%zu\n", n);
 	ft_memmove(s_ft, s, n);
 	print_str_chars(s_ft, sizeof (s_ft), "ft_memmove: \t");
 
-	printf("s: \t\t%s\n", s_ft2);
+
+	char s_ft2[] = "abcdefg";
+	size_t n2 = 0;
+	print_str_chars(s_ft2, sizeof (s_ft2), "s: \t\t");
+	printf("\b");
 	printf("n: \t\t%zu\n", n2);
 	ft_memmove(s_ft2, s, n2);
 	print_str_chars(s_ft2, sizeof (s_ft2), "ft_memmove: \t");

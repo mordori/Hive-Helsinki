@@ -46,6 +46,7 @@ bonus : .bonus
 	@ar -rc $(NAME) $(BONUS_OBJS)
 
 test: $(NAME) $(TEST_FILE)
+	@code $(SRC_DIR)ft_$(TEST).c
 	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
 	@./a.out

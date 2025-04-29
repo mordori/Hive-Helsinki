@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 20:44:24 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:43:18 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static size_t	ft_count_words(char const *s, char c)
 			++s;
 		while (*s != c && *s)
 			++s;
-		if (!(!*s && *(s - 1) == c))
+		if (*s || *(s - 1) != c)
 			++count;
 	}
 	return (count);
@@ -49,7 +49,7 @@ static size_t	ft_word_len(char const **s, char c)
 	size_t	len;
 
 	len = 0;
-	while (**s == c)
+	while (**s == c && **s)
 		++*s;
 	while (**s != c && **s)
 	{
