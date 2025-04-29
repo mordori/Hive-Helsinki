@@ -6,18 +6,19 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 14:43:37 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:22:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>	// Malloc(), NULL, size_t
+# include <stdlib.h>	// malloc(), free(), NULL, size_t
 # include <limits.h>	// INT_MAX, INT_MIN
 # include <stdint.h>	// SIZE_MAX
 
 int		ft_isalpha(int c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);

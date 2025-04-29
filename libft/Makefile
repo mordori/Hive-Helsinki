@@ -1,15 +1,15 @@
 .DEFAULT_GOAL = all
 
-SRC_DIR = src/
-SRCS =	$(wildcard $(SRC_DIR)ft_*.c)
+SRC_DIR = src
+SRCS =	$(wildcard $(SRC_DIR)/ft_*.c)
 OBJS = $(SRCS:.c=.o)
-BONUS_SRCS = $(wildcard $(SRC_DIR)ft_*.c)
+BONUS_SRCS = $(wildcard $(SRC_DIR)/ft_*.c)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 TEST = default
-TEST_DIR = tests/
-TEST_FILE = $(TEST_DIR)test_$(TEST).c
-TEST_UTILS = $(TEST_DIR)libft_tests.c
+TEST_DIR = tests
+TEST_FILE = $(TEST_DIR)/test_$(TEST).c
+TEST_UTILS = $(TEST_DIR)/libft_tests.c
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -29,13 +29,15 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -rf $(OBJS)
-	@echo "\033[1;31m [-] removed .o files \033[0m"
+	@echo "\033[1;31m [-]\033[0m removed .o files"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf ./a.out
+	@rm -rf a.out
+	@rm -rf $(SRC_DIR)/a.out
+	@rm -rf $(SRC_DIR)/$(NAME)
 	@rm -rf .bonus
-	@echo "\033[1;31m [-] removed $(NAME) \033[0m"
+	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
 
@@ -46,7 +48,7 @@ bonus : .bonus
 	@ar -rc $(NAME) $(BONUS_OBJS)
 
 test: $(NAME) $(TEST_FILE)
-	@code $(SRC_DIR)ft_$(TEST).c
+#	@code $(SRC_DIR)/ft_$(TEST).c
 	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
 	@./a.out
