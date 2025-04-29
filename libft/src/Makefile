@@ -1,18 +1,19 @@
-.DEFAULT_GOAL = all
+CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR = src/
-SRCS =	$(wildcard $(SRC_DIR)ft_*.c)
+SRCS =	$(wildcard ft_*.c)
+
+BONUS_SRCS = $(wildcard ft_*.c)
+
 OBJS = $(SRCS:.c=.o)
-BONUS_SRCS = $(wildcard $(SRC_DIR)ft_*.c)
+
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 TEST = default
-TEST_DIR = tests/
-TEST_FILE = $(TEST_DIR)test_$(TEST).c
-TEST_UTILS = $(TEST_DIR)libft_tests.c
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+TEST_FILE = ./tests/test_$(TEST).c
+
+TEST_UTILS = ./tests/libft_tests.c
+
 NAME = libft.a
 
 .SECONDARY: $(OBJS)
@@ -24,7 +25,7 @@ $(NAME): $(OBJS)
 	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@cc $(CFLAGS) -c $< -o $@
 	@echo "\033[1;32m [+] \033[0mcompiling $@"
 
 clean:
@@ -45,13 +46,14 @@ bonus : .bonus
 	@touch .bonus
 	@ar -rc $(NAME) $(BONUS_OBJS)
 
-test: $(NAME) $(TEST_FILE)
-	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+test: $(NAME) $(TEST_FILE) clean
+#	@code ./ft_$(TEST).c
+	@cc -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
 	@./a.out
 
 debug:
-	@$(CC) -lbsd -g $(FLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
-	@gdb -tui ./a.out
+	@ cc -lbsd -g $(FLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+	@ gdb -tui ./a.out
 
-.PHONY: all clean fclean re bonus .bonus test debug
+.PHONY: all clean fclean re bonus test debug
