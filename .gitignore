@@ -1,0 +1,6 @@
+#.gitignore
+.vscode/
+libft/external_tests
+a.out
+libft.a
+*.o
