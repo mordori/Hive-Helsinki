@@ -6,15 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:08:44 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:54:37 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:41:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Appends characters from string `src` to the end of string `dst`,
- * NUL-terminating the result which is at most `size` bytes long.
+ * Allocates memory and copies characters from strings `s1` and `s2`.
  *
  * @param s1 Source string 1.
  * @param s2 Source string 2.

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:42:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 19:07:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:28:25 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param n Integer number.
  * @return Number of digits in an integer.
  */
-int	ft_count_digits(int n)
+static int	ft_count_digits(int n)
 {
 	int	count;
 
@@ -34,7 +34,9 @@ int	ft_count_digits(int n)
 }
 
 /**
- * Allocates memory and converts `n` to a string. Handles negtive numbers.
+ * Allocates memory and converts `n` to a string.
+ *
+ * Handles negative numbers.
  *
  * @param n Integer to be converted.
  * @return String of the converted integer.

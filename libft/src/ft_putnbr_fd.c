@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 21:37:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:43:31 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/29 21:13:06 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 22:18:21 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Allocates memory and duplicates string `s`.
+ * Outputs integer `n` to the specified file descriptor.
  *
- * @param s Source string.
- * @return New string duplicated from `s`.
+ * @param n Integer to output.
+ * @param fd File descriptor.
  */
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return (ft_substr(s, 0, ft_strlen(s)));
+	char	c;
+
+	if (n == INT_MIN)
+	{
+		write (fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write (fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	c = n % 10 + '0';
+	write (fd, &c, 1);
 }

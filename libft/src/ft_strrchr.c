@@ -6,13 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:10:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:55:04 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:49:16 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
+ * Attempts to find the last occurrance of character `c` in `s`.
  *
  * @param s Source string.
  * @param c Character to be searched for.

@@ -6,19 +6,19 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:43:13 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 12:59:21 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:50:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Allocates memory and returns a copy of string `s1` with characters from
+ * Allocates memory and copies string `s1` with characters from
  * string `set` removed from the beginning and the end.
  *
  * @param s1 Source string.
  * @param set Set of characters to be trimmed.
- * @return New substring from `s1` trimmed with `set`.
+ * @return New substring of `s1` trimmed with `set`.
  */
 char	*ft_strtrim(char const *s1, char const *set)
 {

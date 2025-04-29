@@ -6,15 +6,16 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:20:10 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 19:39:04 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:45:38 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Applies function `f` to each character of string `s`. New string is created
- * to store the successive applications.
+ * Applies function `f` to each character of string `s`.
+ *
+ * New string is created to store the successive applications.
  *
  * @param s Source string
  * @param f Fuction pointer

@@ -6,15 +6,16 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 19:10:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:28:13 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:43:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Appends characters from string `src` to the end of string `dst`,
- * NUL-terminating the result which is at most `size` bytes long.
+ * Tries to append characters from string `src` to the end of string `dst`.
+ *
+ * NUL-terminates the result.
  *
  * @param dst Destination string.
  * @param src Source string.

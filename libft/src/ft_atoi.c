@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 13:59:00 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:19:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	ft_isspace(char c)
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
-// TODO: Print error for `NULL` and overflow when allowed.
 /**
  * Converts the initial portion of the string `nptr` to an integer value.
  *

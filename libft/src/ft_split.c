@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 13:43:18 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:30:27 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ static size_t	ft_count_words(char const *s, char c)
 
 /**
  * Counts the length of a word in the source string pointed by `s` using
- * the delimiter character `c`. Moves the pointer to the end of the word.
+ * the delimiter character `c`.
+ *
+ * Moves the pointer to the end of the word.
  *
  * @param s Pointer to a source string.
  * @param c Delimiter character.
@@ -80,7 +82,9 @@ static char	**ft_free_strs(char **strs)
 
 /**
  * Allocates memory and returns an array of strings by splitting string `s`
- * using the character `c` as a deliter. Last element is a NULL pointer.
+ * using the character `c` as the deliter.
+ *
+ * Last element is a NULL pointer.
  *
  * @param s Source string.
  * @param c Delimiter character.

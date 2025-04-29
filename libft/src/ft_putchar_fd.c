@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 21:37:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:43:31 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/29 20:45:37 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 22:17:57 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Allocates memory and duplicates string `s`.
+ * Outputs character `c` to the specified file descriptor.
  *
- * @param s Source string.
- * @return New string duplicated from `s`.
+ * @param c Character to output.
+ * @param fd File descriptor.
  */
-char	*ft_strdup(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	return (ft_substr(s, 0, ft_strlen(s)));
+	write (fd, &c, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:36:03 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 12:41:36 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:51:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  * Converts lowercase alphabet character `a-z` to uppercase.
  *
  * `\xFF` hex returns signed `-1` in libc toupper.
+ *
  * @param c Character to be converted.
  * @return `A-Z`, otherwise `c`. Exception for \xFF.
  */

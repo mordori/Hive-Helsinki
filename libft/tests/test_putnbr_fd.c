@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   test_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 21:37:39 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:43:31 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/29 19:41:16 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 19:57:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_tests.h"
 
-/**
- * Allocates memory and duplicates string `s`.
- *
- * @param s Source string.
- * @return New string duplicated from `s`.
- */
-char	*ft_strdup(const char *s)
+int	main(void)
 {
-	return (ft_substr(s, 0, ft_strlen(s)));
+	ft_putnbr_fd(123, 1);
+	printf("\n");
+	ft_putnbr_fd(1000, 1);
+	printf("\n");
+	ft_putnbr_fd(-3562, 2);
+	printf("\n");
+	ft_putnbr_fd(0, 0);
+	printf("\n");
+	ft_putnbr_fd(INT_MAX, 0);
+	printf("\n");
+	ft_putnbr_fd(INT_MIN, 0);
+	printf("\n");
+
+	return (0);
 }

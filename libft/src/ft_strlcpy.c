@@ -6,15 +6,16 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:19:27 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:05:07 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/29 22:44:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Copies up to `size - 1` characters from the string `src` to the string `dst`,
- * NUL-terminating the result.
+ * Copies up to `size-1` characters from the string `src` to the string `dst`.
+ *
+ * NUL-terminates the result.
  *
  * @param dst Destination string.
  * @param src Source string.
