@@ -1,19 +1,23 @@
-CFLAGS = -Wall -Wextra -Werror
+.DEFAULT_GOAL = all
 
-SRCS =	$(wildcard ft_*.c)
-
-BONUS_SRCS = $(wildcard ft_*.c)
+SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
+		ft_bzero.c ft_isascii.c ft_memchr.c ft_memset.c ft_toupper.c \
+		ft_calloc.c ft_isdigit.c ft_memcmp.c ft_putchar_fd.c \
+		ft_isalnum.c ft_isprint.c ft_memcpy.c ft_putendl_fd.c \
+		ft_strdup.c ft_strlcpy.c ft_strnstr.c ft_tolower.c \
+		ft_putstr_fd.c ft_striteri.c ft_strlen.c ft_strrchr.c \
+		ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c \
+		ft_strchr.c ft_strlcat.c ft_strncmp.c ft_substr.c
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+TEST = undefined
+TEST_DIR = tests
+TEST_FILE = $(TEST_DIR)/test_$(TEST).c
+TEST_UTILS = $(TEST_DIR)/libft_tests.c
 
-TEST = default
-
-TEST_FILE = ./tests/test_$(TEST).c
-
-TEST_UTILS = ./tests/libft_tests.c
-
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 .SECONDARY: $(OBJS)
@@ -25,35 +29,24 @@ $(NAME): $(OBJS)
 	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 %.o: %.c
-	@cc $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "\033[1;32m [+] \033[0mcompiling $@"
 
 clean:
 	@rm -rf $(OBJS)
-	@echo "\033[1;31m [-] removed .o files \033[0m"
+	@echo "\033[1;31m [-]\033[0m removed .o files"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf ./a.out
-	@rm -rf .bonus
-	@echo "\033[1;31m [-] removed $(NAME) \033[0m"
+	@rm -rf a.out
+	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
 
-bonus : .bonus
-
-.bonus : $(OBJS) $(BONUS_OBJS)
-	@touch .bonus
-	@ar -rc $(NAME) $(BONUS_OBJS)
-
-test: $(NAME) $(TEST_FILE) clean
-#	@code ./ft_$(TEST).c
-	@cc -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+test: $(NAME) $(TEST_FILE)
+	@code ft_$(TEST).c
+	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
 	@echo ""
 	@./a.out
 
-debug:
-	@ cc -lbsd -g $(FLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
-	@ gdb -tui ./a.out
-
-.PHONY: all clean fclean re bonus test debug
+.PHONY: all clean fclean re test

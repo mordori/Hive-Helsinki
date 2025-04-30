@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:53:05 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/22 21:16:22 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:43:22 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ void test_tolower(int c)
 
 int	main(void)
 {
+	printf("xFF test: \t%d\n", tolower('\xFF'));
+	printf("xFF test: \t%d\n\n", ft_tolower('\xFF'));
+	printf("xFF test: \t%d\n", tolower('\xFE'));
+	printf("xFF test: \t%d\n\n", ft_tolower('\xFE'));
+
+	printf("255 test: \t%d\n", tolower(255));
+	printf("255 test: \t%d\n\n", ft_tolower(255));
+
 	test_all(test_tolower);
 
 	return (0);

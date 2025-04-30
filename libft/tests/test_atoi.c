@@ -39,7 +39,10 @@ int	main(int argc, char *argv[])
 	test_atoi("2147483647");
 	test_atoi("-2147483648");
 	if(argc == 2)
+	{
+		printf("\033[35mPROGRAM ARGUMENTS\033[0m\n");
 		test_atoi(argv[1]);
+	}
 	return (0);
 }
 

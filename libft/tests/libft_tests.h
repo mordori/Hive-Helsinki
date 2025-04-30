@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:35:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 12:05:00 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:44:07 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define KO "\033[31m[KO]\033[0m"
 
 // Tests
-# define CHARSET "aAo9!\a\0\xFF\200"
+# define CHARSET "aAo9!\a\0\200\xFF"
 # define STRINGS {"Hello, world!" "Test"}
 
 void print_str_chars(char *str, size_t n, char *msg);

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:19:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:59:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_isspace(char c)
 /**
  * Converts the initial portion of the string `nptr` to an integer value.
  *
- * Guards against overflow.
+ * Guards against overflow, constraining the value to INT_MIN or INT_MAX.
  *
  * In case of `NULL nptr` returns arbitrary -1.
  *
