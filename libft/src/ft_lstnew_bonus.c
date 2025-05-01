@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:11:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/30 14:32:29 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/30 14:27:32 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/30 14:46:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Erases `n` bytes of data in the memory area `s` by writing `/0`.
- *
- * @param s Source memory area.
- * @param n Number of bytes to be NUL-terminated.
- */
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	ft_memset(s, 0, n);
+	t_list	*new;
+
+	new = ft_calloc(1, sizeof (t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

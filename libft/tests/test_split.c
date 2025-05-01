@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 19:57:32 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 13:37:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/01 02:34:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,23 @@ void	print_result(char **words)
 
 int main(void)
 {
-	print_result(ft_split("Hello,42,Piscine,and,goodbye,!", ','));
-	print_result(ft_split("  Apple Orange  Banana", ' '));
-	print_result(ft_split("---One--Two-Three--", '-'));
-	print_result(ft_split("----", '-'));
-	print_result(ft_split("", ' '));
+	char **ptr = ft_split("Hello,42,Piscine,and,goodbye,!", ',');
+	int i = 0;
+	if (ptr)
+	{
+		while (ptr[i])
+		{
+			printf("%s\n", ptr[i]);
+			free(ptr[i]);
+			i++;
+		}
+		free(ptr);
+		ptr = NULL;
+	}
+	//print_result(ft_split("Hello,42,Piscine,and,goodbye,!", ','));
+	// print_result(ft_split("  Apple Orange  Banana", ' '));
+	// print_result(ft_split("---One--Two-Three--", '-'));
+	// print_result(ft_split("----", '-'));
+	// print_result(ft_split("", ' '));
 	return (0);
 }
