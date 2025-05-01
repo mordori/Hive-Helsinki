@@ -2,8 +2,6 @@
 
 > A library of commonly used standard and additional utility functions from libc recreated in C.
 
-##
-
 ### 🚨 Usage
 
 - Create the `libft.a` library in your terminal with command:
