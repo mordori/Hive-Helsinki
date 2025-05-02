@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/30 14:28:34 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/02 19:31:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stdint.h>	// SIZE_MAX
 # include <unistd.h>	// write()
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 int		ft_atoi(const char *nptr);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/01 03:03:31 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:12:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,18 @@ static size_t	ft_word_len(char const **s, char c)
  * @param s Array of strings.
  * @return NULL.
  */
-static char	**ft_free_strs(char **strs)
+static void	ft_free_strs(char **strs)
 {
-	int i = 0;
+	int	i;
 
-	while (strs[i])
+	i = -1;
+	while (strs[++i])
 	{
 		free(strs[i]);
 		strs[i] = NULL;
-		i++;
 	}
 	free(strs);
 	strs = NULL;
-	return (NULL);
 }
 
 /**
@@ -111,13 +110,11 @@ char	**ft_split(char const *s, char c)
 	{
 		word_len = ft_word_len(&s, c);
 		strs[i] = ft_substr(s - word_len, 0, word_len);
-		if (i == 2)
-		{
-			free(strs[i]);
-			strs[i] = NULL;
-		}
 		if (!strs[i])
-			return (ft_free_strs(strs));
+		{
+			ft_free_strs(strs);
+			return (NULL);
+		}
 		++i;
 	}
 	strs[i] = NULL;

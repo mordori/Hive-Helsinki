@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:35:52 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/30 12:44:07 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/02 15:38:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@
 # include <string.h>
 # include <assert.h>
 
-# include "../src/libft.h"
+# include "libft.h"
 # define OK "\033[32m[OK]\033[0m"
 # define KO "\033[31m[KO]\033[0m"
 
 // Tests
 # define CHARSET "aAo9!\a\0\200\xFF"
-# define STRINGS {"Hello, world!" "Test"}
 
 void print_str_chars(char *str, size_t n, char *msg);
 void test_assert(int (*f1)(int c), int (*f2)(int c), int c);

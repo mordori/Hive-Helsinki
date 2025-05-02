@@ -44,8 +44,7 @@ fclean: clean
 re: fclean all
 
 test: $(NAME) $(TEST_FILE)
-	@code ft_$(TEST).c
-	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
+	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS)
 	@echo ""
 	@./a.out
 
