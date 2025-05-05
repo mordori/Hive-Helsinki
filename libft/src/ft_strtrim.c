@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:43:13 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:50:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:00:29 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	len = ft_strlen(s1);
-	while (ft_strrchr(set, s1[len - 1]) && len)
+	while (ft_strchr(set, s1[len - 1]) && len)
 		--len;
 	while (ft_strchr(set, *s1++) && len)
 		--len;

@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 21:13:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:12 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/05/05 16:00:56 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/05/05 22:39:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Outputs integer `n` to the specified file descriptor.
- *
- * @param n Integer to output.
- * @param fd File descriptor.
- */
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	c;
+	t_list	*temp;
+	t_list	*lst_new;
 
-	if (n == INT_MIN)
+	if (!lst || !f || !del)
+		return (NULL);
+	temp = NULL;
+	lst_new = NULL;
+	while (lst)
 	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&lst_new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&lst_new, temp);
+		lst = lst->next;
 	}
-	if (n < 0)
-	{
-		write (fd, "-", 1);
-		n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	write (fd, &c, 1);
+	return (lst_new);
 }

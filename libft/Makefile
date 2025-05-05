@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/02 20:18:57 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/05 15:21:30 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 SRC_DIR = ./src/
 SRCS =	$(wildcard $(SRC_DIR)ft_*.c)
 OBJS = $(SRCS:.c=.o)
-BONUS_SRCS = $(wildcard $(SRC_DIR)ft_*.c)
+BONUS_SRCS = $(wildcard $(SRC_DIR)ft_*_bonus.c)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 TEST = default
@@ -49,13 +49,14 @@ fclean: clean
 	@rm -rf $(SRC_DIR)/a.out
 	@rm -rf $(SRC_DIR)/$(NAME)
 	@rm -rf .bonus
+	@rm -rf $(SRC_DIR).bonus
 	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
 
 bonus : .bonus
 
-.bonus : $(OBJS) $(BONUS_OBJS)
+.bonus : $(OBJS) $(BONUS_OBJS) $(NAME)
 	@touch .bonus
 	@ar -rc $(NAME) $(BONUS_OBJS)
 

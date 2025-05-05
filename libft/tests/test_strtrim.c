@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:08:07 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 12:50:44 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:07:18 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 
 	printf("s: \t\t+-_+Test---+++---\n");
 	printf("set: \t\t-+\n");
-	s = ft_strtrim("+-!+Test---+++---", "-+");
+	s = ft_strtrim("+-_+Test---+++---", "-+");
 	print_str_chars(s, strlen(s) + 1, "ft_strtrim: \t");
 	printf("\n");
 

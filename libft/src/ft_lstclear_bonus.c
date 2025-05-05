@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 21:13:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:12 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/05/05 15:58:59 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/05/05 21:45:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Outputs integer `n` to the specified file descriptor.
+ * Deletes and frees the given node and all its
+ * successors, using the function `del` and free(3).
  *
- * @param n Integer to output.
- * @param fd File descriptor.
+ * Finally, set the pointer to the list to NULL.
+ *
+ * @param lst Pointer to head node of a list.
+ * @param del Pointer to a function to delete content of a node.
  */
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	c;
+	t_list	*temp;
 
-	if (n == INT_MIN)
-	{
-		ft_putstr_fd("-2147483648", fd);
+	if (!lst || !*lst || !del)
 		return ;
-	}
-	if (n < 0)
+	while (*lst)
 	{
-		write (fd, "-", 1);
-		n = -n;
+		temp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		(*lst) = temp;
 	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	write (fd, &c, 1);
 }

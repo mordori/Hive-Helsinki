@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:49:31 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/02 14:12:17 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:01:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = ft_count_words(s, c);
-	strs = malloc((words + 1) * sizeof (char *));
+	strs = ft_calloc((words + 1), sizeof (char *));
 	if (!strs)
 		return (NULL);
 	i = 0;

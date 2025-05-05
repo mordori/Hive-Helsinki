@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/02 20:19:03 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/05 15:28:20 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 		ft_strchr.c ft_strlcat.c ft_strncmp.c ft_substr.c
 
 OBJS = $(SRCS:.c=.o)
+BONUS_SRCS = $(wildcard $(SRC_DIR)ft_*_bonus.c)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 TEST = undefined
 TEST_DIR = tests
@@ -51,13 +53,20 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf a.out
+	@rm -rf .bonus
 	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
+
+bonus : .bonus
+
+.bonus : $(OBJS) $(BONUS_OBJS) $(NAME)
+	@touch .bonus
+	@ar -rc $(NAME) $(BONUS_OBJS)
 
 test: $(NAME) $(TEST_FILE)
 	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS)
 	@echo ""
 	@./a.out
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test bonus .bonus
