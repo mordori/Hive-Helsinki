@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 14:27:32 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:28 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/23 21:27:56 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/28 14:17:18 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Allocates memory for a new list node, initialized with `content` parameter.
+ * Searches `n` bytes of the memory area `s` for byte `c`.
  *
- * `next` is initialized to NULL.
- *
- * @param content The content to store in the new node.
- * @return Pointer to the new node.
+ * @param s Source memory area.
+ * @param c Byte to be searched for.
+ * @param n Number of bytes to be searched for.
+ * @return Pointer to the matching byte, or `NULL` if not found.
  */
-t_list	*ft_lstnew(void *content)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_list	*new;
+	const unsigned char		*d;
 
-	new = ft_calloc(1, sizeof (t_list));
-	if (!new)
+	d = (const unsigned char *)s;
+	c = (unsigned char)c;
+	if (!s)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	while (n--)
+	{
+		if (*d == c)
+			return ((void *)d);
+		++d;
+	}
+	return (NULL);
 }

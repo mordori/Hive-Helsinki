@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:22:09 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 15:52:56 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/16 11:34:04 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/28 13:54:55 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Counts the number of nodes in `list`.
+ * Compares `n` characters of the strings `s1` and `s2`.
  *
- * @param lst Head node of the list.
- * @return Length of `list`.
+ * @param s1 Source string 1.
+ * @param s2 Source string 2.
+ * @param n Maximum amount of characters compared.
+ * @return Integer value from the difference of the compared characters.
  */
-int	ft_lstsize(t_list *lst)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		len;
-
-	if (!lst)
+	if (!s1 || !s2 || !n)
 		return (0);
-	len = 0;
-	while (lst)
+	while (*s1 == *s2 && *s1 && *s2 && --n)
 	{
-		++len;
-		lst = lst->next;
+		++s1;
+		++s2;
 	}
-	return (len);
+	return ((const unsigned char)*s1 - (const unsigned char)*s2);
 }

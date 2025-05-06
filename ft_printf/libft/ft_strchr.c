@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/15 18:49:44 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 22:49:27 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Attempts to find the first occurrance of character `c` in `s`.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param s Source string.
+ * @param c Character to be searched for.
+ * @return Pointer to the first occurrence of `c` in `s`,
+ * or `NULL` if not found.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+char	*ft_strchr(const char *s, int c)
 {
-	if (!lst || !del)
-		return ;
-	del (lst->content);
-	free(lst);
+	c = (unsigned char)c;
+	if (!s)
+		return (NULL);
+	while (*s && (const unsigned char)*s != c)
+		++s;
+	if ((const unsigned char)*s == c)
+		return ((char *)s);
+	return (NULL);
 }

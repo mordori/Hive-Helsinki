@@ -6,11 +6,14 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/05 15:28:20 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/06 17:40:44 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL = all
+NAME = libft.a
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 		ft_bzero.c ft_isascii.c ft_memchr.c ft_memset.c ft_toupper.c \
@@ -20,21 +23,13 @@ SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 		ft_putstr_fd.c ft_striteri.c ft_strlen.c ft_strrchr.c \
 		ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c \
 		ft_strchr.c ft_strlcat.c ft_strncmp.c ft_substr.c
-
 OBJS = $(SRCS:.c=.o)
-BONUS_SRCS = $(wildcard $(SRC_DIR)ft_*_bonus.c)
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-TEST = undefined
-TEST_DIR = tests
-TEST_FILE = $(TEST_DIR)/test_$(TEST).c
-TEST_UTILS = $(TEST_DIR)/libft_tests.c
-
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-NAME = libft.a
-
-.SECONDARY: $(OBJS)
+SRCS_BONUS =	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
+				ft_lstclear_bonus.c ft_lstdelone_bonus.c \
+				ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
+				ft_lstnew_bonus.c ft_lstsize_bonus.c
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -60,13 +55,9 @@ re: fclean all
 
 bonus : .bonus
 
-.bonus : $(OBJS) $(BONUS_OBJS) $(NAME)
+.bonus : $(OBJS) $(OBJS_BONUS) $(NAME)
 	@touch .bonus
-	@ar -rc $(NAME) $(BONUS_OBJS)
+	@ar -rc $(NAME) $(OBJS_BONUS)
 
-test: $(NAME) $(TEST_FILE)
-	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS)
-	@echo ""
-	@./a.out
-
-.PHONY: all clean fclean re test bonus .bonus
+.SECONDARY: $(OBJS)
+.PHONY: all clean fclean re bonus .bonus

@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 14:27:32 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:28 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/16 11:10:27 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 22:49:16 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Allocates memory for a new list node, initialized with `content` parameter.
+ * Attempts to find the last occurrance of character `c` in `s`.
  *
- * `next` is initialized to NULL.
- *
- * @param content The content to store in the new node.
- * @return Pointer to the new node.
+ * @param s Source string.
+ * @param c Character to be searched for.
+ * @return Pointer to the last occurrence of character `c` in `s`,
+ * or `NULL` if not found.
  */
-t_list	*ft_lstnew(void *content)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_list	*new;
+	size_t	i;
 
-	new = ft_calloc(1, sizeof (t_list));
-	if (!new)
+	c = (unsigned char)c;
+	if (!s)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	i = ft_strlen(s);
+	while (i > 0)
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		--i;
+	}
+	if (s[i] == c)
+		return ((char *)&s[i]);
+	return (NULL);
 }

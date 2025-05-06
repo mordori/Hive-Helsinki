@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/15 10:58:00 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/05/02 19:55:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Calculates the amount of characters in string `s`.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param s Source string.
+ * @return The length of the string `s`.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+size_t	ft_strlen(const char *s)
 {
-	if (!lst || !del)
-		return ;
-	del (lst->content);
-	free(lst);
+	size_t	len;
+
+	len = 0;
+	if (!s)
+		return (0);
+	while (*s++)
+		++len;
+	return (len);
 }

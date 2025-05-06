@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/29 20:20:54 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 20:32:07 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Applies function `f` to each character of string `s`.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param s Source string
+ * @param f Fuction pointer
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (!lst || !del)
+	unsigned int	i;
+
+	if (!s || !f)
 		return ;
-	del (lst->content);
-	free(lst);
+	i = -1;
+	while (s[++i])
+		f(i, &s[i]);
 }

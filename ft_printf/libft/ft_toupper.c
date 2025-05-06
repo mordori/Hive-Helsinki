@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/15 18:36:03 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/30 14:48:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Converts lowercase alphabet character `a-z` to uppercase.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * Unsigned char is expected to be passed for `c`.
+ *
+ * `\xFF` hex char returns signed `-1` in glibc toupper. Undefined behavior.
+ *
+ * @param c Character to be converted.
+ * @return `A-Z`, otherwise `c`. Exception for \xFF.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_toupper(int c)
 {
-	if (!lst || !del)
-		return ;
-	del (lst->content);
-	free(lst);
+	if (c == '\xFF')
+		return (c);
+	c = (unsigned char)c;
+	if (c >= 'a' && c <= 'z')
+		c -= 'a' - 'A';
+	return (c);
 }

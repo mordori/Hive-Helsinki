@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/29 20:59:54 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/05/02 22:44:25 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Outputs string `s` to the specified file descriptor.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param s Source string.
+ * @param fd File descriptor.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (!lst || !del)
+	if (!s)
 		return ;
-	del (lst->content);
-	free(lst);
+	write (fd, s, ft_strlen(s));
 }

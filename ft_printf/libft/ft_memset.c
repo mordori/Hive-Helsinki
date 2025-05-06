@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/16 18:51:45 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/28 14:10:06 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Fills `n` bytes of the memory area `s` with byte `c`.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param s Source memory area.
+ * @param c Byte to be written with.
+ * @param n Number of bytes to be written.
+ * @return Pointer to modified `s`.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if (!lst || !del)
-		return ;
-	del (lst->content);
-	free(lst);
+	unsigned char	*d;
+
+	d = (unsigned char *)s;
+	if (!s && n)
+		return (NULL);
+	while (n--)
+		*d++ = (unsigned char)c;
+	return (s);
 }

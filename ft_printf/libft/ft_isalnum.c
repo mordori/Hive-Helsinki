@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/15 15:52:08 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/28 14:38:44 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Checks if `c` is an alphabetic or a numeric character.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param c Character to be checked for.
+ * @return `8` if the check is true, `0` if false.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_isalnum(int c)
 {
-	if (!lst || !del)
-		return ;
-	del (lst->content);
-	free(lst);
+	c = (unsigned char)c;
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (8);
+	return (0);
 }

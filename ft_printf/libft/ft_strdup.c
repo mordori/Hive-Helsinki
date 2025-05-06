@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 15:57:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:20:33 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/04/25 21:37:39 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/04/29 22:43:31 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Deletes `content` from `lst` with function `del`, and then free() the node.
+ * Allocates memory and duplicates string `s`.
  *
- * @param lst Pointer to a node.
- * @param del Pointer to function used to delete `content` of the node.
+ * @param s Source string.
+ * @return New string duplicated from `s`.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+char	*ft_strdup(const char *s)
 {
-	if (!lst || !del)
-		return ;
-	del (lst->content);
-	free(lst);
+	return (ft_substr(s, 0, ft_strlen(s)));
 }
