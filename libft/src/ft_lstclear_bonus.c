@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:58:59 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/06 16:16:06 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/07 16:46:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		temp = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
+		ft_lstdelone(*lst, del);
 		(*lst) = temp;
 	}
 }

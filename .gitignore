@@ -3,4 +3,5 @@
 libft/external_tests
 a.out
 libft.a
+libftprintf.a
 *.o

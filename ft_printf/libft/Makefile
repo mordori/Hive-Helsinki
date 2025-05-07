@@ -6,11 +6,11 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/06 17:40:48 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/07 22:04:33 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.DEFAULT_GOAL = all
+.DEFAULT_GOAL = bonus
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -31,11 +31,10 @@ SRCS_BONUS =	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
 				ft_lstnew_bonus.c ft_lstsize_bonus.c
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) bonus
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -43,21 +42,19 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -rf $(OBJS)
-	@echo "\033[1;31m [-]\033[0m removed .o files"
+	@rm -rf $(OBJS_BONUS)
+	@echo "\033[1;31m [-]\033[0m removed libft .o files"
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf a.out
-	@rm -rf .bonus
 	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
 
-bonus : .bonus
-
-.bonus : $(OBJS) $(OBJS_BONUS) $(NAME)
-	@touch .bonus
+bonus : $(OBJS) $(OBJS_BONUS)
 	@ar -rc $(NAME) $(OBJS_BONUS)
+	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
-.SECONDARY: $(OBJS)
+.SECONDARY: $(OBJS) $(OBJS_BONUS)
 .PHONY: all clean fclean re bonus .bonus

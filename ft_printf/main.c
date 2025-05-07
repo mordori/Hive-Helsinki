@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 17:08:49 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/07 22:36:47 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/05/07 22:15:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <stdio.h>
+#include "ft_printf.h"
 
-# include "libft.h"
-# include <stdarg.h>
-
-int	ft_printf(const char *str, ...);
-
-#endif
+int	main(void)
+{
+	printf("%d", printf("%x\t\n", 257));
+	ft_printf("%d\t", 123);
+	return (0);
+}

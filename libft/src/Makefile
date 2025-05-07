@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/06 17:40:44 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/07 21:57:23 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,5 +59,5 @@ bonus : .bonus
 	@touch .bonus
 	@ar -rc $(NAME) $(OBJS_BONUS)
 
-.SECONDARY: $(OBJS)
+.SECONDARY: $(OBJS) $(OBJS_BONUS)
 .PHONY: all clean fclean re bonus .bonus
