@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/07 22:12:23 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/08 04:40:58 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ static char	*ft_uitoa(unsigned int n)
 	str = ft_calloc(11 + 1, sizeof (char));
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (n > 0)
+	i = 11;
+	while (n && i)
 	{
-		str[i++] = n % 10 + '0';
+		str[i] = n % 10 + '0';
 		n /= 10;
+		--i;
 	}
 	return (str);
 }
@@ -90,11 +91,15 @@ int	ft_printf(const char *str, ...)
 	len = 0;
 	while (*str)
 	{
-		if (*str++ == '%')
-			format((char *)str++, args);
+		if (*str == '%')
+			len += format((char *)++str, args);
 		else
-			ft_putchar_fd(*str++, 1);
+		{
+			ft_putchar_fd(*str, 1);
+			++len;
+		}
+		++str;
 	}
 	va_end(args);
-	return (0);
+	return (len);
 }

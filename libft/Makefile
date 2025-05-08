@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/07 21:57:17 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/08 04:53:04 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,26 +45,17 @@ fclean: clean
 	@rm -rf a.out
 	@rm -rf $(DIR_SRC)/a.out
 	@rm -rf $(DIR_SRC)/$(NAME)
-	@rm -rf .bonus
-	@rm -rf $(DIR_SRC).bonus
 	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
 
-bonus : .bonus
-
-.bonus : $(OBJS) $(BONUS_OBJS) $(NAME)
-	@touch .bonus
-	@ar -rc $(NAME) $(BONUS_OBJS)
+bonus : $(OBJS) $(BONUS_OBJS) $(NAME)
+	@ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
 
 test: $(NAME)
 	@$(CC) -lbsd -g $(CFLAGS) $(TEST_FILE) $(TEST_UTILS) -L. $(NAME) -I$(DIR_SRC)
 	@echo ""
 	@./a.out
 
-debug:
-	@$(CC) -lbsd -g $(FLAGS) $(TEST_FILE) $(TEST_UTILS) $(NAME)
-	@gdb -tui ./a.out
-
 .SECONDARY: $(OBJS) $(OBJS_BONUS)
-.PHONY: all clean fclean re bonus .bonus test debug
+.PHONY: all clean fclean re bonus test

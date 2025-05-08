@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/07 22:35:55 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/08 04:54:45 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 DIR_INC = ./includes/
 DIR_SRC = ./src/
 DIR_LIB = ./libft/
-LIB = libft.a
+LIB = $(DIR_LIB)libft.a
 TEST = main.c
 
 SRCS =	$(wildcard $(DIR_SRC)ft_*.c)
@@ -51,12 +51,11 @@ create_lib:
 	@make -C $(DIR_LIB)
 
 test: $(NAME)
-	$(CC) -lbsd -g $(CFLAGS) $(TEST) $(NAME) $(LIB) -I$(DIR_INC) -I$(DIR_LIB)
+	@$(CC) -g $(CFLAGS) $(TEST) $(NAME) $(LIB) -I$(DIR_INC) -I$(DIR_LIB)
 	@echo ""
 	@./a.out
 
-debug:
-	@$(CC) -lbsd -g $(FLAGS) $(NAME)
+debug: test
 	@gdb -tui ./a.out
 
 .SECONDARY: $(OBJS)

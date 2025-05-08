@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/07 22:04:33 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/08 04:19:55 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS_BONUS =	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
 				ft_lstnew_bonus.c ft_lstsize_bonus.c
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-all: $(NAME) bonus
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
@@ -53,8 +53,8 @@ fclean: clean
 re: fclean all
 
 bonus : $(OBJS) $(OBJS_BONUS)
-	@ar -rc $(NAME) $(OBJS_BONUS)
+	@ar -rc $(NAME) $(OBJS) $(OBJS_BONUS)
 	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 .SECONDARY: $(OBJS) $(OBJS_BONUS)
-.PHONY: all clean fclean re bonus .bonus
+.PHONY: all clean fclean re bonus

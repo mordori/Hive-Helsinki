@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/07 21:57:23 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/08 04:51:49 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,16 +48,12 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf a.out
-	@rm -rf .bonus
 	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 
 re: fclean all
 
-bonus : .bonus
-
-.bonus : $(OBJS) $(OBJS_BONUS) $(NAME)
-	@touch .bonus
-	@ar -rc $(NAME) $(OBJS_BONUS)
+bonus : $(OBJS) $(OBJS_BONUS) $(NAME)
+	@ar -rc $(NAME) $(OBJS) $(OBJS_BONUS)
 
 .SECONDARY: $(OBJS) $(OBJS_BONUS)
-.PHONY: all clean fclean re bonus .bonus
+.PHONY: all clean fclean re bonus
