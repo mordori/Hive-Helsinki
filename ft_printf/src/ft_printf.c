@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/08 04:40:58 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/08 23:23:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,87 +18,109 @@
 //------------------------------------------------
 
 /**
- * Allocates memory and converts `n` to a string.
+ * Counts the number of digits in `n`.
  *
- * Handles negative numbers.
- *
- * @param n Integer to be converted.
- * @return String of the converted integer.
+ * @param n Integer number.
+ * @return Number of digits in an integer.
  */
-static char	*ft_uitoa(unsigned int n)
+static int	ft_count_digits_base(unsigned int n, const size_t len)
+{
+	unsigned int	count;
+
+	if (!n)
+		return (1);
+	count = 0;
+	while (n)
+	{
+		++count;
+		n /= len;
+	}
+	return (count);
+}
+
+static char	*ft_uitoa_base(unsigned int n, const char *base)
 {
 	char	*str;
-	int		i;
+	int		digits;
+	size_t	len;
 
-	str = ft_calloc(11 + 1, sizeof (char));
+	len = ft_strlen(base);
+	digits = ft_count_digits_base(n, len);
+	str = ft_calloc(digits + 1, sizeof (char));
 	if (!str)
 		return (NULL);
-	i = 11;
-	while (n && i)
+	while (digits--)
 	{
-		str[i] = n % 10 + '0';
-		n /= 10;
-		--i;
+		str[digits] = base[n % len];
+		n /= len;
 	}
 	return (str);
 }
 
-static int	format(char *str, va_list args)
+static char	*ft_ptrstr(char *s)
 {
-	if (*str == 'c' || *str == '%')
-	{
-		ft_putchar_fd(*str, 1);
-		return (1);
-	}
-	if (*str == 's')
-		str = va_arg(args, char *);
-	// else if (*str == 'p')
-	// {
+	char	*str;
 
-	// }
-	else if (*str == 'd' || *str == 'i')
-		str = ft_itoa(va_arg(args, int));
-	else if (*str == 'u')
-		str = ft_uitoa(va_arg(args, unsigned int));
-	// else if (*str == 'x')
-	// {
+	str = ft_strjoin("0x", s);
+	free (s);
+	return (str);
+}
 
-	// }
-	// else if (*str == 'X')
-	// {
+static char	*ft_strformat(char c, va_list *args)
+{
+	char	*str;
 
-	// }
+	if (c == '%')
+		str = ft_memset(ft_calloc(2, 1), c, 1);
+	else if (c == 'c')
+		str = ft_memset(ft_calloc(2, 1), va_arg(*args, unsigned int), 1);
+	else if (c == 's')
+		str = ft_strdup(va_arg(*args, char *));
+	else if (c == 'p')
+		str = ft_ptrstr(ft_uitoa_base(va_arg(*args, unsigned int), BASE16LOW));
+	else if (c == 'd' || c == 'i')
+		str = ft_itoa(va_arg(*args, int));
+	else if (c == 'u')
+		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE10);
+	else if (c == 'x')
+		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE16LOW);
+	else if (c == 'X')
+		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE16);
 	else
-		return (-1);
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
+		return (NULL);
+	return (str);
 }
 
 /**
  * DESTSETST
  *
- * @param str asd
+ * @param s asd
  * @return rreter
  */
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	int		len;
+	char	*str;
 
-	if (!str)
+	if (!s)
 		return (-1);
-	va_start(args, str);
+	va_start(args, s);
 	len = 0;
-	while (*str)
+	while (*s)
 	{
-		if (*str == '%')
-			len += format((char *)++str, args);
+		if (*s++ == '%')
+		{
+			str = ft_strformat(*s++, &args);
+			len += ft_strlen(str);
+			ft_putstr_fd(str, 1);
+			free(str);
+		}
 		else
 		{
-			ft_putchar_fd(*str, 1);
+			ft_putchar_fd(*(s - 1), 1);
 			++len;
 		}
-		++str;
 	}
 	va_end(args);
 	return (len);
