@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/08 23:23:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/09 01:39:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,56 +16,6 @@
 // REMOVE!!!!!!!
 #include <stdio.h>
 //------------------------------------------------
-
-/**
- * Counts the number of digits in `n`.
- *
- * @param n Integer number.
- * @return Number of digits in an integer.
- */
-static int	ft_count_digits_base(unsigned int n, const size_t len)
-{
-	unsigned int	count;
-
-	if (!n)
-		return (1);
-	count = 0;
-	while (n)
-	{
-		++count;
-		n /= len;
-	}
-	return (count);
-}
-
-static char	*ft_uitoa_base(unsigned int n, const char *base)
-{
-	char	*str;
-	int		digits;
-	size_t	len;
-
-	len = ft_strlen(base);
-	digits = ft_count_digits_base(n, len);
-	str = ft_calloc(digits + 1, sizeof (char));
-	if (!str)
-		return (NULL);
-	while (digits--)
-	{
-		str[digits] = base[n % len];
-		n /= len;
-	}
-	return (str);
-}
-
-static char	*ft_ptrstr(char *s)
-{
-	char	*str;
-
-	str = ft_strjoin("0x", s);
-	free (s);
-	return (str);
-}
-
 static char	*ft_strformat(char c, va_list *args)
 {
 	char	*str;
@@ -77,18 +27,41 @@ static char	*ft_strformat(char c, va_list *args)
 	else if (c == 's')
 		str = ft_strdup(va_arg(*args, char *));
 	else if (c == 'p')
-		str = ft_ptrstr(ft_uitoa_base(va_arg(*args, unsigned int), BASE16LOW));
+		str = ft_ptrstr(ft_uitoa_base(va_arg(*args, uintptr_t), BASE16_LOW));
 	else if (c == 'd' || c == 'i')
 		str = ft_itoa(va_arg(*args, int));
 	else if (c == 'u')
 		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE10);
 	else if (c == 'x')
-		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE16LOW);
+		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE16_LOW);
 	else if (c == 'X')
 		str = ft_uitoa_base(va_arg(*args, unsigned int), BASE16);
 	else
 		return (NULL);
 	return (str);
+}
+
+static int	ft_print_format(char c, va_list *args)
+{
+	int		len;
+	char	*str;
+
+	str = ft_strformat(c, args);
+	if (c == 's' && !str)
+		str = ft_strdup("(null)");
+	else if (!str)
+		return (-1);
+	if (c == 'p' && ft_strlen(str) == 3 && !ft_strncmp(str, "0x0", 3))
+	{
+		free (str);
+		str = ft_strdup("(nil)");
+	}
+	len = ft_strlen(str);
+	if (c == 'c')
+		len = 1;
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (len);
 }
 
 /**
@@ -101,7 +74,7 @@ int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	int		len;
-	char	*str;
+	int		add;
 
 	if (!s)
 		return (-1);
@@ -111,10 +84,10 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s++ == '%')
 		{
-			str = ft_strformat(*s++, &args);
-			len += ft_strlen(str);
-			ft_putstr_fd(str, 1);
-			free(str);
+			add = ft_print_format(*s++, &args);
+			if (add == -1)
+				return (-1);
+			len += add;
 		}
 		else
 		{

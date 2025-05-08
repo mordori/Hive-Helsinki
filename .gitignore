@@ -1,6 +1,7 @@
 #.gitignore
 .vscode/
-libft/external_tests
+external_tests/
+tester/
 a.out
 libft.a
 libftprintf.a
