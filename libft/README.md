@@ -13,13 +13,6 @@ make all
 ``` Makefile
 make test TEST=split
 ```
-- To compile and run the tests for bonus functions, use the following commands:
-``` Makefile
-make bonus
-```
-``` Makefile
-make test bonus
-```
 - To delete all of the compiled files, use:
 ``` Makefile
 make fclean
