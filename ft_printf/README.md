@@ -4,11 +4,11 @@
 
 ### 🚨 Usage
 
-- Create the `libftprintf.a` library in your terminal with command:
+- Create the `libftprintf.a` library in your terminal with the command:
 ``` Makefile
 make all
 ```
-- To compile and run the tests, use the following commands:
+- To compile and run the tests, use the following command:
 ``` Makefile
 make test
 ```
