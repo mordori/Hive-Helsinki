@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/08 20:53:51 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/09 03:52:54 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,13 @@ DIR_LIB = ./libft/
 LIB = libft.a
 TEST = main.c
 
-SRCS =	$(wildcard $(DIR_SRC)ft_*.c)
+SRCS =	$(addprefix $(DIR_SRC), ft_printf.c ft_utils.c)
 OBJS = $(SRCS:.c=.o)
 
-all: lib $(NAME)
+all: $(LIB) $(NAME)
+
+$(LIB):
+	@make -C $(DIR_LIB)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
@@ -32,6 +35,7 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I$(DIR_INC)
+	@echo "\033[1;32m [+]\033[0m compiling $@"
 
 clean:
 	@rm -rf $(OBJS)
@@ -45,11 +49,7 @@ fclean: clean
 
 re: fclean all
 
-lib:
-	@make -C $(DIR_LIB)
-	@echo "\033[1;32m [+]\033[0m compiling $(NAME)"
-
-test: $(NAME)
+test: $(LIB) $(NAME)
 	@$(CC) -g $(CFLAGS) $(TEST) $(NAME) $(LIB) -I$(DIR_INC)
 	@echo ""
 	@./a.out
@@ -58,4 +58,4 @@ debug: test
 	@gdb -tui ./a.out
 
 .SECONDARY: $(OBJS)
-.PHONY: all clean fclean re lib test debug
+.PHONY: all clean fclean re test debug

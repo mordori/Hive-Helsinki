@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/09 01:43:34 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/09 06:01:16 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,21 @@
 
 int	main(void)
 {
-	printf("\033[33mc\033[0m\n");
-	printf("\tReturns: %d\tprintf\n", printf("\".%c.%c.%c.\"", '0', 0, '1'));
-	ft_printf("\tReturns: %d\tft_printf\n\n", ft_printf("\".%c.%c.%c.\"", '0', 0, '1'));
+	// Output looks the same with putstr, but it doesn't write '\0' to stdout so use putchar for that.
+	printf("\033[33mc c c c c\033[0m\n");
+	printf("\t\tReturns: %d\tprintf\n", printf(".%c.%c.%c.%c.%c.", '\0', 0, '\0', '0', '\0'));
+	ft_printf("\t\tReturns: %d\tft_printf\n\n", ft_printf(".%c.%c.%c.%c.%c.", '\0', 0, '\0', '0', '\0'));
 
-	char *str = "Hello";
+	char *str1 = NULL;
+	char *str2 = "Hello";
+	char *str3 = "";
 	printf("\033[33ms\033[0m\n");
-	printf("\t\tReturns: %d\n", printf("%s", (char *)NULL));
-	ft_printf("\t\tReturns: %d\n", ft_printf("%s", (char *)NULL));
-	printf("\t\tReturns: %d\n", printf("%s", str));
-	ft_printf("\t\tReturns: %d\n\n", ft_printf("%s", str));
+	printf("\t\tReturns: %d\n", printf("%s", str1));
+	ft_printf("\t\tReturns: %d\n", ft_printf("%s", str1));
+	printf("\t\tReturns: %d\n", printf("%s", str2));
+	ft_printf("\t\tReturns: %d\n", ft_printf("%s", str2));
+	printf("\t\tReturns: %d\n", printf("%s", str3));
+	ft_printf("\t\tReturns: %d\n\n", ft_printf("%s", str3));
 
 	char *ptr1 = ft_calloc(1, sizeof (char *));
 	printf("\033[33mp\033[0m\n");
@@ -61,15 +66,13 @@ int	main(void)
 	printf("\t\tReturns: %d\n", printf("%%"));
 	ft_printf("\t\tReturns: %d\n\n", ft_printf("%%"));
 
-
-
 	char *ptr2 = ft_calloc(1, sizeof (char *));
 	printf("\033[33mc s p d i u x X %%\033[0m\n");
-	printf("\n\t\tReturns: %d\n", printf("%c \n%s \n%p \n%d \n%i \n%u \n%x \n%X \n%%", '$', "Hello", ptr2, 3, 7, 12, 15, 15));
-	ft_printf("\n\t\tReturns: %d\n\n", ft_printf("%c \n%s \n%p \n%d \n%i \n%u \n%x \n%X \n%%", '$', "Hello", ptr2, 3, 7, 12, 15, 15));
+	printf("\tReturns: %d\n", printf("%c %s %p %d %i %u %x %X %%", '$', "Hello", ptr2, 3, 7, 12, 15, 15));
+	ft_printf("\tReturns: %d\n\n", ft_printf("%c %s %p %d %i %u %x %X %%", '$', "Hello", ptr2, 3, 7, 12, 15, 15));
 
-	printf("\033[33mld (undefined)\033[0m\n");
-	ft_printf("\t\tReturns: %d\n\n", ft_printf("%ld", (long)1000));
+	ft_printf("\033[33mld (undefined)\033[0m");
+	ft_printf("\tReturns: %d\n\n", ft_printf("%ld", (long)1000));
 
 	free (ptr1);
 	free (ptr2);
