@@ -4,11 +4,11 @@
 
 ### 🚨 Usage
 
-- Create the `libft.a` library in your terminal with command:
+- Create the `libft.a` library in your terminal with the command:
 ``` Makefile
 make all
 ```
-- To run the tests for a function, use command `make test TEST=name` where name is the function to be tested.
+- To run the tests for a function, use the command `make test TEST=name` where name is the function to be tested.
 - E.g., for `ft_split.c` the command is:
 ``` Makefile
 make test TEST=split
