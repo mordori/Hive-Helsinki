@@ -13,6 +13,7 @@
 ## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft)
 
 - A library of commonly used standard and additional utility functions from libc recreated in C.
-- Includes functions from subsequently completed projects.
+- Some of the functions have been modified from the subject, e.g. to handle errors.
+- Includes functions from subsequently completed projects and expanded utility implementations.
 
 ###### <p align="right">⚠ Work in progress
