@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/09 05:43:58 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/09 20:39:22 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,19 @@ static char	*ft_strformat(char c, va_list *args)
 	else if (c == 's')
 		str = ft_strdup(va_arg(*args, char *));
 	else if (c == 'p')
-		str = ft_ptrstr(ft_uitoa(va_arg(*args, uintptr_t), BASE16_LOW));
+		str = ft_ptrstr(ft_uitoa(va_arg(*args, uintptr_t), BASE16));
 	else if (c == 'd' || c == 'i')
 		str = ft_itoa(va_arg(*args, int));
 	else if (c == 'u')
 		str = ft_uitoa(va_arg(*args, unsigned int), BASE10);
 	else if (c == 'x')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE16_LOW);
+		str = ft_uitoa(va_arg(*args, unsigned int), BASE16);
 	else if (c == 'X')
 		str = ft_uitoa(va_arg(*args, unsigned int), BASE16);
 	else
 		return (NULL);
+	if (c == 'p' || c == 'x')
+		ft_striteri(str, ft_tolower);
 	return (str);
 }
 
@@ -56,9 +58,15 @@ static int	ft_printformat(char c, va_list *args)
 	if (c == 'c')
 		len = 1;
 	if (c == 'c' && !*str)
-		ft_putchar_fd('\0', 1);
+	{
+		if (ft_putchar_fd('\0', 1) == -1)
+			len = -1;
+	}
 	else
-		ft_putstr_fd(str, 1);
+	{
+		if (ft_putstr_fd(str, 1) == -1)
+			len = -1;
+	}
 	free(str);
 	return (len);
 }

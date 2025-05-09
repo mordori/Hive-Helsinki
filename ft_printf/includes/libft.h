@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/08 19:04:53 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/09 20:38:15 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+int		ft_striteri(char *s, int (*f)(char*));
+int		ft_putchar_fd(char c, int fd);
+int		ft_putendl_fd(char *s, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_toupper(char *c);
+int		ft_tolower(char *c);
+
 int		ft_atoi(const char *nptr);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_isalpha(int c);
@@ -31,8 +38,6 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
@@ -45,10 +50,6 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putchar_fd(char c, int fd);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);

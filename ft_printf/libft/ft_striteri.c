@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 20:32:07 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/09 20:38:09 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
  * @param s Source string
  * @param f Fuction pointer
  */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_striteri(char *s, int (*f)(char*))
 {
 	unsigned int	i;
 
 	if (!s || !f)
-		return ;
+		return (-1);
 	i = -1;
 	while (s[++i])
-		f(i, &s[i]);
+		f(&s[i]);
+	return (1);
 }
