@@ -9,6 +9,7 @@
 ## [ft_printf](https://github.com/mordori/Hive-Helsinki/tree/main/ft_printf#ft_printf)
 
 - Recreation of the `printf` function with the following data types as possible conversions: `c s p d i u x X %`.
+- Included in `libft`.
 
 ## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft)
 
