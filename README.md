@@ -10,7 +10,7 @@
 
 - Recreation of the `printf` function with the following data types as possible conversions:
 ```
-%c %s %p %d %i %u %x %X %%
+c s p d i u x X %
 ```
 
 ## [libft](https://github.com/mordori/Hive-Helsinki/tree/main/libft#libft)
