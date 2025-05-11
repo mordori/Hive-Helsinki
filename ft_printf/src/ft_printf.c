@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/09 20:39:22 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 01:22:16 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,79 +23,60 @@ static char	*ft_strformat(char c, va_list *args)
 	else if (c == 's')
 		str = ft_strdup(va_arg(*args, char *));
 	else if (c == 'p')
-		str = ft_ptrstr(ft_uitoa(va_arg(*args, uintptr_t), BASE16));
+		str = ft_ptrstr(ft_uitoa(va_arg(*args, uintptr_t), BASE_16));
 	else if (c == 'd' || c == 'i')
 		str = ft_itoa(va_arg(*args, int));
 	else if (c == 'u')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE10);
+		str = ft_uitoa(va_arg(*args, unsigned int), BASE_10);
 	else if (c == 'x')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE16);
+		str = ft_uitoa(va_arg(*args, unsigned int), BASE_16);
 	else if (c == 'X')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE16);
+		str = ft_uitoa(va_arg(*args, unsigned int), BASE_16);
 	else
 		return (NULL);
 	if (c == 'p' || c == 'x')
 		ft_striteri(str, ft_tolower);
+	if (c == 's' && !str)
+		str = ft_strdup("(null)");
 	return (str);
 }
 
-static int	ft_printformat(char c, va_list *args)
+static int	ft_strprint(char c, va_list *args)
 {
-	int		len;
+	int		bytes;
 	char	*str;
 
 	str = ft_strformat(c, args);
-	if (c == 's' && !str)
-		str = ft_strdup("(null)");
-	else if (!str)
+	if (!str)
 		return (-1);
-	if (c == 'p' && ft_strlen(str) == 3 && !ft_strncmp(str, "0x0", 3))
-	{
-		free (str);
-		str = ft_strdup("(nil)");
-	}
-	len = ft_strlen(str);
 	if (c == 'c')
-		len = 1;
-	if (c == 'c' && !*str)
-	{
-		if (ft_putchar_fd('\0', 1) == -1)
-			len = -1;
-	}
+		bytes = ft_putchar_fd(*str, 1);
 	else
-	{
-		if (ft_putstr_fd(str, 1) == -1)
-			len = -1;
-	}
+		bytes = ft_putstr_fd(str, 1);
 	free(str);
-	return (len);
+	return (bytes);
 }
 
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
-	int		len;
-	int		add;
+	int		totalbytes;
+	int		bytes;
 
 	if (!s)
 		return (-1);
 	va_start(args, s);
-	len = 0;
+	totalbytes = 0;
 	while (*s)
 	{
 		if (*s++ == '%')
-		{
-			add = ft_printformat(*s++, &args);
-			if (add == -1)
-				return (-1);
-			len += add;
-		}
+			bytes = ft_strprint(*s++, &args);
 		else
-		{
-			ft_putchar_fd(*(s - 1), 1);
-			++len;
-		}
+			bytes = ft_putchar_fd(*(s - 1), 1);
+		if (bytes == -1)
+			return (-1);
+		totalbytes += bytes;
 	}
 	va_end(args);
-	return (len);
+	return (totalbytes);
 }

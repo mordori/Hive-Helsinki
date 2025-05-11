@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 21:26:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:55:14 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/11 22:51:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	i;
 
-	i = 0;
 	if (!s)
 		return (NULL);
+	i = 0;
 	if (ft_strlen(s) > start)
 		while (s[start + i] && i < len)
 			++i;

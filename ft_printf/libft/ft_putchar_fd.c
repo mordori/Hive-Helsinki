@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:45:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/09 20:05:04 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/11 22:19:52 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@
  *
  * @param c Character to output.
  * @param fd File descriptor.
- * @return Number of characters written, or -1 on error.
+ * @return Number of characters written, -1 on error or only partial write.
  */
 int	ft_putchar_fd(char c, int fd)
 {
-	return (write (fd, &c, 1));
+	int	bytes;
+
+	bytes = write (fd, &c, 1);
+	if (bytes < 1)
+		return (-1);
+	return (bytes);
 }

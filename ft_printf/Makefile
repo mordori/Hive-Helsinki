@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/09 03:52:54 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/11 23:03:00 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ all: $(LIB) $(NAME)
 $(LIB):
 	@make -C $(DIR_LIB)
 
-$(NAME): $(OBJS)
+$(NAME): $(LIB) $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 

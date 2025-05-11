@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:36:03 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/09 20:37:29 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 00:32:38 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * Converts lowercase alphabet character `a-z` to uppercase.
  *
  * @param c Character to be converted.
- * @return `A-Z`, otherwise `c`. Exception for \xFF.
+ * @return `A-Z`, otherwise `c`.
  */
 int	ft_toupper(char *c)
 {

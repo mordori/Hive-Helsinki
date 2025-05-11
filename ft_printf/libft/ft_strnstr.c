@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:58:06 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/04/29 22:47:33 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/11 22:50:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	start;
 	size_t	i;
 
-	start = 0;
 	if (!big || !little)
 		return (NULL);
 	if (!*little)
 		return ((char *)big);
+	start = 0;
 	while (big[start])
 	{
 		i = 0;

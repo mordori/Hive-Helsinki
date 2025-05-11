@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:32:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/02 14:29:58 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/11 22:48:15 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
 	if ((!dest || !src) && n)
 		return (NULL);
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
 	if (dest <= src)
 		return (ft_memcpy(dest, src, n));
 	while (n--)
