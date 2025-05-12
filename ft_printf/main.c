@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 08:52:23 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:17:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,13 @@ int	main(void)
 	free (ptr2);
 
 	// Eve's test, closes stdout and checks whether error value is returned from write().
-	/*
-	ft_printf("\033[33mstdout closed\033[0m");
-	int ret;
-	int original_stdout = dup(STDOUT_FILENO);
-	fclose(stdout);
-	ret = ft_printf("test\n");
-	stdout = (FILE *)fdopen(original_stdout, "w");
-	printf("\tReturns: %d\n\n", ret);
-	*/
+	// ft_printf("\033[33mstdout closed\033[0m");
+	// int ret;
+	// int original_stdout = dup(STDOUT_FILENO);
+	// fclose(stdout);
+	// ret = ft_printf("test\n");
+	// stdout = (FILE *)fdopen(original_stdout, "w");
+	// printf("\tReturns: %d\n\n", ret);
 
 	return (0);
 }

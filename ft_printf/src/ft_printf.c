@@ -6,12 +6,41 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 08:49:25 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:20:59 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/**
+ * Formats pointer address. Expects string 's' as hexadecimal number.
+ *
+ * @param s Source string.
+ * @return String of formatted pointer address in hex, beginning with `0x` or
+ * `(nil)` if NULL pointer.
+ */
+static char	*ft_ptrformat(char *s)
+{
+	char	*str;
+
+	if (!s)
+		return (NULL);
+	if (*s == '0')
+		str = ft_strdup("(nil)");
+	else
+		str = ft_strjoin("0x", s);
+	free (s);
+	return (str);
+}
+
+/**
+ * Formats given argument in `args` with data type specified with `c`.
+ * Allocates memory for a new string.
+ *
+ * @param c Data type specified to be coverted.
+ * @param args Variable type argument list.
+ * @return String with formatted type conversion.
+ */
 static char	*ft_strformat(char c, va_list *args)
 {
 	char	*str;
@@ -25,13 +54,13 @@ static char	*ft_strformat(char c, va_list *args)
 	else if (c == 'd' || c == 'i')
 		str = ft_itoa(va_arg(*args, int));
 	else if (c == 'u')
-		str = ft_uitoa(va_arg(*args, uintptr_t), BASE_10);
-	else if (c == 'p' || c == 'x' || c == 'X')
-		str = ft_uitoa(va_arg(*args, uintptr_t), BASE_16);
+		str = ft_uitoa(va_arg(*args, unsigned int), BASE_10);
+	else if (c == 'x' || c == 'X')
+		str = ft_uitoa(va_arg(*args, unsigned int), BASE_16);
+	else if (c == 'p')
+		str = ft_ptrformat(ft_uitoa(va_arg(*args, uintptr_t), BASE_16));
 	else
 		return (NULL);
-	if (c == 'p')
-		str = ft_ptrstr(str);
 	if (c == 'p' || c == 'x')
 		ft_striteri(str, ft_tolower);
 	if (c == 's' && !str)
@@ -39,6 +68,13 @@ static char	*ft_strformat(char c, va_list *args)
 	return (str);
 }
 
+/**
+ * Prints and then free()s the formatted string `str`.
+ *
+ * @param c Data type specified to be coverted.
+ * @param args Variable type argument list.
+ * @return Number of bytes written or -1 on error.
+ */
 static int	ft_strprint(char c, va_list *args)
 {
 	int		bytes;
@@ -55,6 +91,17 @@ static int	ft_strprint(char c, va_list *args)
 	return (bytes);
 }
 
+/**
+ * Formats and prints string `s` with variable type argument list.
+ *
+ * Supported data type conversions:
+ *
+ * c s d i u x X p %
+ *
+ * @param s Source string.
+ * @return Number of bytes written, summed from characters written from `s`
+ * and the type conversions. Returns -1 on error.
+ */
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;

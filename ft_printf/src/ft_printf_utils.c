@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 02:46:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 01:12:40 by myli-pen         ###   ########.fr       */
+/*   Created: 2025/05/12 15:24:42 by myli-pen          #+#    #+#             */
+/*   Updated: 2025/05/12 15:25:28 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /**
- * Counts the number of digits in `n`.
+ * Counts the number of digits in `n` with a specified base.
  *
  * @param n Integer number.
- * @return Number of digits in an integer.
+ * @param len Number of characters in the base used.
+ * @return Number of digits in an integer number.
  */
 static int	ft_countdigits(uintptr_t n, const size_t len)
 {
@@ -34,6 +35,18 @@ static int	ft_countdigits(uintptr_t n, const size_t len)
 	return (count);
 }
 
+/**
+ * Validates `base` with the following rules:
+ *
+ * - Begins with digits 0-9 in ascending order
+ *
+ * - Has atleast 2 digits
+ *
+ * - A-Z in ascending order after the 10th digit.
+ *
+ * @param base Source string.
+ * @return `1` if `base` is valid, `0` if not.
+ */
 static int	ft_validatebase(const char *base)
 {
 	int	i;
@@ -56,6 +69,14 @@ static int	ft_validatebase(const char *base)
 	return (1);
 }
 
+/**
+ * Converts the unsigned integer `n` of `base` to a newly allocated string.
+ * The base is validated.
+ *
+ * @param n Number to be converted.
+ * @param base Base of the number.
+ * @return String of the converted number.
+ */
 char	*ft_uitoa(uintptr_t n, const char *base)
 {
 	char	*str;
@@ -74,19 +95,5 @@ char	*ft_uitoa(uintptr_t n, const char *base)
 		str[digits] = base[n % len];
 		n /= len;
 	}
-	return (str);
-}
-
-char	*ft_ptrstr(char *s)
-{
-	char	*str;
-
-	if (!s)
-		return (NULL);
-	if (*s == '0')
-		str = ft_strdup("(nil)");
-	else
-		str = ft_strjoin("0x", s);
-	free (s);
 	return (str);
 }

@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/11 23:03:00 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/12 15:24:20 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ DIR_LIB = ./libft/
 LIB = libft.a
 TEST = main.c
 
-SRCS =	$(addprefix $(DIR_SRC), ft_printf.c ft_utils.c)
+SRCS =	$(addprefix $(DIR_SRC), ft_printf.c ft_printf_utils.c)
 OBJS = $(SRCS:.c=.o)
 
 all: $(LIB) $(NAME)
@@ -54,8 +54,5 @@ test: $(LIB) $(NAME)
 	@echo ""
 	@./a.out
 
-debug: test
-	@gdb -tui ./a.out
-
 .SECONDARY: $(OBJS)
-.PHONY: all clean fclean re test debug
+.PHONY: all clean fclean re test
