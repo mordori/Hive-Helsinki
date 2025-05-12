@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 00:31:28 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 08:52:23 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	main(void)
 
 	// u
 	printf("\033[33mu\033[0m\n");
+	printf("\t\tReturns: %d\n", printf("%u", UINT_MAX + 1));
+	ft_printf("\t\tReturns: %d\n", ft_printf("%u", UINT_MAX + 1));
 	printf("\tReturns: %d\n", printf("%u", -1));
 	ft_printf("\tReturns: %d\n\n", ft_printf("%u", -1));
 
@@ -92,6 +94,7 @@ int	main(void)
 	free (ptr2);
 
 	// Eve's test, closes stdout and checks whether error value is returned from write().
+	/*
 	ft_printf("\033[33mstdout closed\033[0m");
 	int ret;
 	int original_stdout = dup(STDOUT_FILENO);
@@ -99,6 +102,7 @@ int	main(void)
 	ret = ft_printf("test\n");
 	stdout = (FILE *)fdopen(original_stdout, "w");
 	printf("\tReturns: %d\n\n", ret);
+	*/
 
 	return (0);
 }

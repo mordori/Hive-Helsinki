@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 01:22:16 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 08:49:25 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,16 @@ static char	*ft_strformat(char c, va_list *args)
 		str = ft_memset(ft_calloc(2, 1), va_arg(*args, unsigned int), 1);
 	else if (c == 's')
 		str = ft_strdup(va_arg(*args, char *));
-	else if (c == 'p')
-		str = ft_ptrstr(ft_uitoa(va_arg(*args, uintptr_t), BASE_16));
 	else if (c == 'd' || c == 'i')
 		str = ft_itoa(va_arg(*args, int));
 	else if (c == 'u')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE_10);
-	else if (c == 'x')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE_16);
-	else if (c == 'X')
-		str = ft_uitoa(va_arg(*args, unsigned int), BASE_16);
+		str = ft_uitoa(va_arg(*args, uintptr_t), BASE_10);
+	else if (c == 'p' || c == 'x' || c == 'X')
+		str = ft_uitoa(va_arg(*args, uintptr_t), BASE_16);
 	else
 		return (NULL);
+	if (c == 'p')
+		str = ft_ptrstr(str);
 	if (c == 'p' || c == 'x')
 		ft_striteri(str, ft_tolower);
 	if (c == 's' && !str)
