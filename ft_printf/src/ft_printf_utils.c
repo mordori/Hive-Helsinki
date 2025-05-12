@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:24:42 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 15:25:28 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 16:21:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	ft_validatebase(const char *base)
 	int	i;
 	int	j;
 
-	if(!base || !*base)
+	if (!base || !*base)
 		return (0);
 	i = 0;
 	while (i < 10 && base[i] == i + '0')
