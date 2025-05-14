@@ -3,7 +3,7 @@
 ## <p align="middle">[Wiki](https://github.com/mordori/Hive-Helsinki/wiki) ⚠
 
 > [!NOTE]
-> These projects are made according to a strict programming standard called `Norm` that defines a set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
+> These projects are made according to a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 
 ## [get_next_line]() ⚠
 
