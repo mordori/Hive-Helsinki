@@ -20,7 +20,7 @@
 
 ## [ft_printf](https://github.com/mordori/ft_printf)
 
-- Simplified recreation of the variadic <stdio.h> `printf` function with the following data types as supported conversions: `c s p d i u x X %`.
+- Simplified recreation of the variadic `printf` function.
 - Included in `libft`.
 
 ## [libft](https://github.com/mordori/libft?tab=readme-ov-file#libft)
