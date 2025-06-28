@@ -9,7 +9,7 @@
 
 ## born2beroot
 
-- Project about creating a virtual machine in VirtualBox, installing Debian and implementing strict rules for use.
+- Project about creating a virtual machine in VirtualBox, installing Debian, and implementing strict rules for use.
 - Topics explored included LVM, SSH, ufw, sudo, users, passwords, logs, and cron among other things.
 - Clear understanding of the commands and protocols used was a rigorous instruction for this project.
 
