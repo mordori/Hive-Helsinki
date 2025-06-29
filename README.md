@@ -9,22 +9,22 @@
 
 ## born2beroot
 
-- Project about creating a virtual machine in VirtualBox, installing Debian, and implementing strict rules for use.
+Project about creating a virtual machine in VirtualBox, installing Debian, and implementing strict rules for use.
 - Topics explored included LVM, SSH, ufw, sudo, users, passwords, logs, and cron among other things.
 - Clear understanding of the commands and protocols used was a rigorous instruction for this project.
 
 ## [get_next_line](https://github.com/mordori/get_next_line)
 
-- Function that returns a line read from a file descriptor.
+Function that returns a line read from a file descriptor.
 - Included in `libft`.
 
 ## [ft_printf](https://github.com/mordori/ft_printf)
 
-- Simplified recreation of the variadic `printf` function.
+Simplified recreation of the variadic `printf` function.
 - Included in `libft`.
 
 ## [libft](https://github.com/mordori/libft?tab=readme-ov-file#libft)
 
-- A library of commonly used standard and additional utility functions from libc recreated in C.
+A library of commonly used standard and additional utility functions from libc recreated in C.
 - Some of the functions have been modified from the subject, e.g. to handle errors.
 - Includes functions from subsequently completed projects and expanded utility implementations.
