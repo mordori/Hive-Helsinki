@@ -1,7 +1,7 @@
 # <p align="middle">Collection of my projects at Hive Helsinki</p>
 
 > [!IMPORTANT]
-> These projects are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
+> The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 
 ## [FdF](https://github.com/mordori/FdF) ⚠
 
