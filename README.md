@@ -23,7 +23,7 @@ Function that returns a line read from a file descriptor.
 Simplified recreation of the variadic `printf` function.
 - Included in `libft`.
 
-## [libft](https://github.com/mordori/libft?tab=readme-ov-file#libft)
+## [libft](https://github.com/mordori/libft)
 
 Library of commonly used standard and additional utility functions from libc recreated in C.
 - Some of the functions have been modified from the subject, e.g. to handle errors.
