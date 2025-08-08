@@ -12,7 +12,7 @@ Simple wireframe model software renderer with limited file parsing.
 - Includes an orbiting camera controller that emulates the navigation style of 3D modeling software like Blender
 
 
-## [push_swap](https://github.com/mordori/push-swap)
+## [push_swap](https://github.com/mordori/push_swap)
 
 Program that sorts a stack in ascending order using indexed LSD radix sort.
 - Uses two LIFO (Last In - First Out) stacks `a` and `b` (vector arrays)
