@@ -22,6 +22,12 @@ Program that sorts a stack in ascending order using indexed LSD radix sort.
 - Worst-case time complexity is $O(n^2)$ with insertion sort as the dominant term
 - Space complexity is $O(n)$
 
+## [libft](https://github.com/mordori/libft)
+
+Library of commonly used standard and additional utility functions from libc recreated in C.
+- Some of the functions have been modified from the subject, e.g. to handle errors
+- Includes functions from subsequently completed projects and expanded utility implementations
+
 ## [get_next_line](https://github.com/mordori/get_next_line)
 
 Function that returns a line read from a file descriptor.
@@ -31,12 +37,6 @@ Function that returns a line read from a file descriptor.
 
 Simplified recreation of the variadic `printf` function.
 - Included in `libft`
-
-## [libft](https://github.com/mordori/libft)
-
-Library of commonly used standard and additional utility functions from libc recreated in C.
-- Some of the functions have been modified from the subject, e.g. to handle errors
-- Includes functions from subsequently completed projects and expanded utility implementations
 
 ## born2beroot
 
