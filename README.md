@@ -14,13 +14,16 @@ Simple wireframe model software renderer with limited file parsing.
 
 ## [push_swap](https://github.com/mordori/push_swap)
 
-Program that sorts a stack in ascending order using indexed LSD radix sort.
-- Uses two LIFO (Last In - First Out) stacks `a` and `b` (vector arrays)
+Program that sorts a stack in ascending order using indexed least significant digit LSD radix sort.
+
+The goal of the project was not computational efficiency, but to minimize the number of operations performed.
+- Uses two LIFO (Last In — First Out) stacks `a` and `b` (vector arrays)
 - Parses and validates user input for duplicates with a hashtable
-- Indexes the numbers using insertion sort
-- Sorts the stacks with `pb`, `pa`, and `ra` operations
+- Indexes the numbers using insertion sort with a temporary copy
+- Sorts the stacks with `pb`, `pa`, `sa`, `ra`, and `rra` operations
 - Worst-case time complexity is $O(n^2)$ with insertion sort as the dominant term
 - Space complexity is $O(n)$
+- Very stable — sorts 100 numbers in fewer than 1,100 operations and 500 numbers in fewer than 7000 operations under all conditions
 
 ## [libft](https://github.com/mordori/libft)
 
