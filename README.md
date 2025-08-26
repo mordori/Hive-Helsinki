@@ -23,7 +23,9 @@ The goal of the project was not computational efficiency, but to minimize the nu
 - Very stable — sorts 100 numbers in fewer than 1,100 operations and 500 numbers in fewer than 7000 operations under all conditions
 
 ## [minitalk](https://github.com/mordori/minitalk)
-Program that sends a string to another process (identified by its PID) using UNIX signals (SIGUSR1 and SIGUSR2). It first sends the length of the string in bits, then sends the actual string, bit by bit. The receiving process acknowledges each bit via a signal handler.
+Program that sends a string to another process (identified by its PID) using UNIX signals (SIGUSR1 and SIGUSR2).
+
+It first sends the length of the string in bits, then sends the actual string, bit by bit. The receiving process acknowledges each bit via a signal handler.
 - Server-client model
 - ACK handshake
 - Ensures the complete message is received before printing it
