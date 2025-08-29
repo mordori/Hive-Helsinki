@@ -3,6 +3,12 @@
 > [!IMPORTANT]
 > The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 
+## [minishell]
+**Work in progress.**
+
+## [Philosophers]
+**Work in progress.**
+
 ## [FdF](https://github.com/mordori/FdF)
 **Simple wireframe model software renderer.**
 - Implements a software-based geometry pipeline similar to that of modern GPUs
