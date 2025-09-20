@@ -6,14 +6,16 @@
 ## [minishell]
 **Work in progress.**
 
-## [Philosophers]
-**Work in progress.**
+## [Philosophers](https://github.com/mordori/Philosophers)
+**Dining philosophers with threads and mutex.**
+- Resources shared between the threads are locked with mutex to avoid data races
+- Main thread handles the monitoring of the philosophers' status
+- Dedicated logging thread decoupled from the status monitoring handles the printing of the philosophers' states
 
 ## [FdF](https://github.com/mordori/FdF)
 **Simple wireframe model software renderer.**
 - Implements a software-based geometry pipeline similar to that of modern GPUs
 - Uses the Liang-Barsky algorithm for line clipping and Bresenham’s algorithm for rasterizing the lines
-- Follows an OpenGL-style right-handed coordinate convention, where Y is up, X is to the right, and in view space the camera looks down -Z
 - Includes an orbiting camera controller that emulates the navigation style of 3D modeling software like Blender
 
 ## [push_swap](https://github.com/mordori/push_swap)
