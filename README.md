@@ -1,4 +1,4 @@
-# <p align="middle">Collection of my projects at Hive Helsinki</p>
+# <p align="middle">Collection of my projects at [Hive Helsinki](https://www.hive.fi/)</p>
 
 > [!IMPORTANT]
 > The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
