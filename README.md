@@ -1,7 +1,17 @@
 # <p align="middle">Collection of my projects at [Hive Helsinki](https://www.hive.fi/)</p>
 
+# [Feedback](https://github.com/mordori/Philosophers)
+**Snapshot of feedback received through peer project evaluations.**
+- Each entry displays the critique I gave for events and peers' projects, and the feedback I received from conducting those evaluations.
+
+<br>
+
 > [!IMPORTANT]
 > The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
+
+<br>
+
+# Projects
 
 ## [minishell]
 **Work in progress.**
