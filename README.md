@@ -12,6 +12,53 @@
 > [!IMPORTANT]
 > The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 
+
+### 🚀 Featured
+
+<table>
+<tr>
+<td>
+
+## &nbsp;&nbsp;[FdF](https://github.com/mordori/FdF)
+
+&nbsp;&nbsp;&nbsp;**Simple wireframe model software renderer.**
+- Implements a software-based geometry pipeline similar to that of modern GPUs
+- Uses the Liang-Barsky algorithm for line clipping and Bresenham’s algorithm for rasterizing the lines
+- Includes an orbiting camera controller that emulates the navigation style of 3D modeling software like Blender
+
+<br>
+
+</td>
+<td>
+
+<img src="doc/42.gif" alt="Demo" width="300"/>
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td>
+
+## &nbsp;&nbsp;[Philosophers](https://github.com/mordori/Philosophers)
+
+&nbsp;&nbsp;&nbsp;**Dining philosophers with threads and mutex.**
+- Resources shared between the threads are locked with mutex to avoid data races
+- Main thread handles the monitoring of the philosophers' status
+- Dedicated logging thread decoupled from the status monitoring handles the printing of the philosophers' states
+
+<br>
+
+</td>
+<td>
+
+<img src="doc/asdasd.gif" alt="Demo" width="300"/>
+
+</td>
+</tr>
+</table>
+
 <br>
 
 ## [ft_transcendence]() `Typescript` `Docker` `Babylon.js`
