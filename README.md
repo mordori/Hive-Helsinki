@@ -7,7 +7,7 @@
 
 <br>
 
-### 🚀 Featured
+## 🚀 Featured Projects
 
 <table>
 <tr>
