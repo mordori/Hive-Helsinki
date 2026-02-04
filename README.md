@@ -1,9 +1,7 @@
 # <p align="middle">Collection of my projects at [Hive Helsinki](https://www.hive.fi/)</p>
 
-<h2>
-  📢 <a href="https://github.com/mordori/Hive-Helsinki/wiki/Peer-Evaluation-&-Feedback" target="_blank">Peer Evaluation & Feedback</a>
-</h2>
-**Snapshot of peer feedback from the project evaluations I conducted.**
+## 📢 [Peer Evaluation & Feedback](https://github.com/mordori/Hive-Helsinki/wiki/Peer-Evaluation-&-Feedback)
+**Overview of feedback received on my performance as a peer evaluator.**
 - At Hive Helsinki, soft skills such as collaboration, effective communication, and autonomous problem-solving, are prioritized alongside technical proficiency.
 - This section documents the constructive feedback I provided during peer code reviews, regarding the quality and helpfulness of my reviews.
 
