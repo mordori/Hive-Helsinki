@@ -1,19 +1,35 @@
 # <p align="middle">Collection of my projects at [Hive Helsinki](https://www.hive.fi/)</p>
 
-# 📢 [Feedback](https://github.com/mordori/Philosophers)
-**Snapshot of feedback received through peer project evaluations.**
-- Each entry displays the critique I gave to other students, and the feedback I received from conducting those evaluations.
-- In cases where I successfully validated a student's project, but the grade is 0, the student cancelled their project before being fully evaluated. They most likely found mistakes in their following evaluations.
+## 📢 [Peer Evaluation & Feedback](https://github.com/mordori/Hive-Helsinki/wiki/Feedback)
+**Snapshot of peer feedback from the project evaluations I conducted.**
+- At Hive Helsinki, soft skills such as collaboration, effective communication, and autonomous problem-solving, are prioritized alongside technical proficiency.
+- This section documents the constructive feedback I provided during peer code reviews, regarding the quality and helpfulness of my reviews.
 
 <br>
 
-# 💾 Projects
-
-> [!IMPORTANT]
-> The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
-
-
 ### 🚀 Featured
+
+<table>
+<tr>
+<td>
+
+## &nbsp;&nbsp;[miniRT](https://github.com/mordori/miniRT)
+
+&nbsp;&nbsp;&nbsp;**Multithreaded CPU path tracer with memory efficiency and systems-level optimisations.**
+- Monte Carlo integration with importance sampling for Global Illumination
+- Bounding Volume Hierarchy for computing intersections
+- Optimised memory alignment for SIMD (Single Instruction, Multiple Data) execution while delegating most of the instruction selection to the compiler, balancing code readability with raw performance.
+
+<br>
+
+</td>
+<td>
+
+<img src="doc/42.gif" alt="Demo" width="300"/>
+
+</td>
+</tr>
+</table>
 
 <table>
 <tr>
@@ -37,41 +53,13 @@
 </tr>
 </table>
 
-<table>
-<tr>
-<td>
-
-## &nbsp;&nbsp;[Philosophers](https://github.com/mordori/Philosophers)
-
-&nbsp;&nbsp;&nbsp;**Dining philosophers with threads and mutex.**
-- Resources shared between the threads are locked with mutex to avoid data races
-- Main thread handles the monitoring of the philosophers' status
-- Dedicated logging thread decoupled from the status monitoring handles the printing of the philosophers' states
 
 <br>
 
-</td>
-<td>
-
-<img src="doc/asdasd.gif" alt="Demo" width="300"/>
-
-</td>
-</tr>
-</table>
+> [!IMPORTANT]
+> The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 
 <br>
-
-## [ft_transcendence]() `Typescript` `Docker` `Babylon.js`
-**Work in progress.**
-- WIP
-
-## [Cpp Modules]() `C++`
-**Work in progress.**
-- WIP
-
-## [miniRT]() `C`
-**Work in progress.**
-- WIP
 
 ## [minishell]() `C`
 **Work in progress.**
@@ -82,12 +70,6 @@
 - Resources shared between the threads are locked with mutex to avoid data races
 - Main thread handles the monitoring of the philosophers' status
 - Dedicated logging thread decoupled from the status monitoring handles the printing of the philosophers' states
-
-## [FdF](https://github.com/mordori/FdF) `C`
-**Simple wireframe model software renderer.**
-- Implements a software-based geometry pipeline similar to that of modern GPUs
-- Uses the Liang-Barsky algorithm for line clipping and Bresenham’s algorithm for rasterizing the lines
-- Includes an orbiting camera controller that emulates the navigation style of 3D modeling software like Blender
 
 ## [push_swap](https://github.com/mordori/push_swap) `C`
 **Program that sorts a stack in ascending order using indexed least significant digit LSD radix sort.**
@@ -123,17 +105,7 @@ It first sends the length of the string in bits, then sends the actual string, b
 **Simplified recreation of the variadic `printf` function.**
 - Included in `libft`
 
-<br>
-
-## Inception `Docker`
-**Work in progress.**
-- WIP
-
 ## born2beroot `VM` `shell`
 **Project about creating a virtual machine in VirtualBox, installing Debian, and implementing strict rules for use.**
 - Topics explored included LVM, SSH, ufw, sudo, users, passwords, logs, and cron among other things
 - Clear understanding of the commands and protocols used was a rigorous instruction for this project
-
-## Netpractice `TCP`
-**Work in progress.**
-- WIP
