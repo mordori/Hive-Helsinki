@@ -19,7 +19,7 @@
 &nbsp;&nbsp;&nbsp;Integration.**
 - Monte Carlo integration with importance sampling for Global Illumination
 - BVH acceleration structure for rapid intersection testing
-- Optimised memory alignment for SIMD execution while delegating most of the instruction selection to the compiler, balancing code readability with raw performance
+- Optimised custom memory alignment for SIMD execution, balancing code readability with raw performance
 
 <br>
 
