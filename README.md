@@ -15,10 +15,10 @@
 
 ## &nbsp;&nbsp;[miniRT](https://github.com/mordori/miniRT)
 
-&nbsp;&nbsp;&nbsp;**Multithreaded CPU path tracer with memory efficiency and systems-level optimisations.**
+&nbsp;&nbsp;&nbsp;**High-Performance CPU Path Tracer with Monte Carlo Integration.**
 - Monte Carlo integration with importance sampling for Global Illumination
-- Bounding Volume Hierarchy for computing intersections
-- Optimised memory alignment for SIMD (Single Instruction, Multiple Data) execution while delegating most of the instruction selection to the compiler, balancing code readability with raw performance.
+- BVH acceleration for rapid intersection testing
+- Optimised memory alignment for SIMD execution while delegating most of the instruction selection to the compiler, balancing code readability with raw performance
 
 <br>
 
