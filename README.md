@@ -62,9 +62,9 @@
 
 <br>
 
-## [minishell]() `C`
-**Work in progress.**
-- WIP
+## [minishell](https://github.com/mordori/minishell) `C`
+**Modest replication of bash.**
+- Documentation is under construction.
 
 ## [Philosophers](https://github.com/mordori/Philosophers) `C`
 **Dining philosophers with threads and mutex.**
