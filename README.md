@@ -39,7 +39,7 @@
 ## &nbsp;&nbsp;[FdF](https://github.com/mordori/FdF)
 
 &nbsp;&nbsp;&nbsp;**Simple wireframe model software renderer.**
-- Implements a software-based geometry pipeline similar to that of modern GPUs
+- Implements a software-based geometry pipeline (Model->World->Clip->NDC->Screen)
 - Uses the Liang-Barsky algorithm for line clipping and Bresenham’s algorithm for rasterizing the lines
 - Includes an orbiting camera controller that emulates the navigation style of 3D modeling software like Blender
 
