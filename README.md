@@ -26,7 +26,7 @@
 </td>
 <td>
 
-<img src="doc/42.gif" alt="Demo" width="300"/>
+<img src="https://github.com/mordori/miniRT/blob/main/doc/rt.png" alt="Demo" width="375"/>
 
 </td>
 </tr>
@@ -48,7 +48,7 @@
 </td>
 <td>
 
-<img src="doc/42.gif" alt="Demo" width="300"/>
+<img src="https://github.com/mordori/FdF/blob/main/doc/42.gif" alt="Demo" width="300"/>
 
 </td>
 </tr>
