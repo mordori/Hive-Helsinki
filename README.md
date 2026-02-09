@@ -26,7 +26,7 @@
 </td>
 <td>
 
-<img src="https://github.com/mordori/miniRT/blob/main/doc/rt.png" alt="Demo" width="375"/>
+<img src="https://github.com/mordori/miniRT/blob/main/doc/rt.png" alt="Demo" width="475"/>
 
 </td>
 </tr>
