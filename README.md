@@ -15,7 +15,8 @@
 
 ## &nbsp;&nbsp;[miniRT](https://github.com/mordori/miniRT)
 
-&nbsp;&nbsp;&nbsp;**High-Performance CPU Path Tracer with Monte Carlo &nbsp;Integration.**
+&nbsp;&nbsp;&nbsp;**High-Performance CPU Path Tracer with Monte Carlo
+&nbsp;Integration.**
 - Monte Carlo integration with importance sampling for Global Illumination
 - BVH acceleration structure for rapid intersection testing
 - Optimised custom memory alignment for SIMD execution, balancing code readability with raw performance
