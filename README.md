@@ -17,9 +17,10 @@
 
 &nbsp;&nbsp;&nbsp;**High-Performance CPU Path Tracer with Monte Carlo
 &nbsp;&nbsp;&nbsp;Integration.**
-- Monte Carlo integration with importance sampling for Global Illumination
+- Monte Carlo integration with multiple importance sampling for Global Illumination
 - BVH acceleration structure for rapid intersection testing
 - Optimised custom memory alignment for SIMD execution, balancing code readability with raw performance
+- PBR material model featuring Disney diffuse and Cook-Torrance specular lobes with VNDF for visible microfacet normals
 
 <br>
 
