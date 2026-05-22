@@ -15,7 +15,7 @@
 
 ## &nbsp;&nbsp;[miniRT](https://github.com/mordori/miniRT)
 
-&nbsp;&nbsp;&nbsp;**High-Performance CPU Path Tracer with Monte Carlo
+&nbsp;&nbsp;&nbsp;**High-Performance CPU Path Tracer with Quasi-Monte Carlo
 &nbsp;&nbsp;&nbsp;Integration.**
 - Monte Carlo integration with multiple importance sampling for Global Illumination
 - BVH acceleration structure for rapid intersection testing
@@ -62,6 +62,11 @@
 > The projects in `C` are made in accordance with a programming standard called `Norm` that defines a strict set of rules to follow when writing code. The full standard can be viewed [here](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 
 <br>
+
+## [C++ Modules](https://github.com/mordori/CPP-Modules) `C++20`
+**Collection of exercises focusing on OOP principles.**
+- Written in C++20, utilizing modern language features where allowed.
+- Emphasized clean, maintainable code with industry best practises. 
 
 ## [minishell](https://github.com/mordori/minishell) `C`
 **Modest replication of bash.**
