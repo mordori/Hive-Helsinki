@@ -65,7 +65,7 @@
 
 ## [C++ Modules](https://github.com/mordori/CPP-Modules) `C++20`
 **Collection of exercises focusing on OOP principles.**
-- Written in C++20, utilizing modern language features where allowed.
+- Written in C++20 standard, utilizing modern language features where allowed.
 - Emphasized clean, maintainable code with industry best practises. 
 
 ## [minishell](https://github.com/mordori/minishell) `C`
